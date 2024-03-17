@@ -1,0 +1,5 @@
+park:
+  core:
+    page-size:
+      max : 1000
+      default : 10
