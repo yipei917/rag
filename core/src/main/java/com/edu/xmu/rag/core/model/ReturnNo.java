@@ -31,7 +31,7 @@ public enum ReturnNo {
     }
 
     public static ReturnNo getByCode(int code1) {
-        ReturnNo[] all=ReturnNo.values();
+        ReturnNo[] all = ReturnNo.values();
         for (ReturnNo returnNo :all) {
             if (returnNo.errNo == code1) {
                 return returnNo;

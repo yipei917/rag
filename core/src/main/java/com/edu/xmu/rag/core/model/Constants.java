@@ -19,4 +19,6 @@ public interface Constants {
      */
     int MAX_RETURN = 1000;
 
+    public static final Long IDNOTEXIST = -1L;
+
 }
