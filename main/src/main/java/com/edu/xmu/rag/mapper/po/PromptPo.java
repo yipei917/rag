@@ -9,19 +9,25 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "knowledge_base")
+@Table(name = "prompt")
 @NoArgsConstructor
 @AllArgsConstructor
-public class KnowledgeBasePo {
+public class PromptPo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
+
     private String code;
 
-    private String description;
-
     private int status;
+
+    private String systemPrompt;
+
+    private String userPrompt;
+
+    private Long modelId;
 
     private Long userId;
 

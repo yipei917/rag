@@ -5,27 +5,25 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Entity
 @Data
-@Table(name = "knowledge_base")
+@Table(name = "user")
 @NoArgsConstructor
 @AllArgsConstructor
-public class KnowledgeBasePo {
+public class UserPo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String code;
+    private Long account;
 
-    private String description;
+    private String name;
+
+    private String password;
 
     private int status;
 
-    private Long userId;
+    private int type;
 
-    private LocalDateTime gmtCreate;
-
-    private LocalDateTime gmtModified;
+    private String token;
 }

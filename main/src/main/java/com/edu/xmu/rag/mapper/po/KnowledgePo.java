@@ -9,21 +9,23 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "knowledge_base")
+@Table(name = "knowledge")
 @NoArgsConstructor
 @AllArgsConstructor
-public class KnowledgeBasePo {
+public class KnowledgePo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String code;
 
-    private String description;
+    private Long kbId;
+
+    private String title;
+
+    private String content;
 
     private int status;
-
-    private Long userId;
 
     private LocalDateTime gmtCreate;
 
