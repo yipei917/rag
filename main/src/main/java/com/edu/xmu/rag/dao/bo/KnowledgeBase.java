@@ -5,12 +5,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
-public class KnowledgeBase {
+public class KnowledgeBase implements Serializable {
     @Builder
     public KnowledgeBase(Long id, String code, String description, int status, Long userId, LocalDateTime gmtCreate, LocalDateTime gmtModified, UserDao userDao) {
         this.id = id;
@@ -47,7 +48,7 @@ public class KnowledgeBase {
     @ToString.Exclude
     private User user;
 
-    public User getCustomer() {
+    public User getUser() {
         if (null == this.userId) {
             return null;
         }

@@ -3,9 +3,11 @@ package com.edu.xmu.rag.dao.bo;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
+import java.io.Serializable;
+
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class User {
+public class User implements Serializable {
     @Builder
     public User(Long id, Long account, String name, String password, int status, int type, String token) {
         this.id = id;
