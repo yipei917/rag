@@ -1,0 +1,114 @@
+2024-03-19 11:53:13.391 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 11:53:13.459 [restartedMain] INFO  com.edu.xmu.rag.MainApplication - Starting MainApplication using Java 17.0.2 with PID 23748 (D:\学习资料\毕设\rag\main\target\classes started by 小培 in D:\学习资料\毕设\rag)
+2024-03-19 11:53:13.461 [restartedMain] INFO  com.edu.xmu.rag.MainApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 11:53:13.535 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-03-19 11:53:13.536 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-03-19 11:53:14.603 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 11:53:14.679 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 5 JPA repository interfaces.
+2024-03-19 11:53:15.125 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=2115fd35-b87f-3649-aaaa-b55b281f7a28
+2024-03-19 11:53:15.643 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-03-19 11:53:15.644 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-03-19 11:53:15.644 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2024-03-19 11:53:15.656 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2024-03-19 11:53:15.663 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-19 11:53:15.664 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-19 11:53:15.664 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-03-19 11:53:15.743 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-19 11:53:15.743 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2206 ms
+2024-03-19 11:53:15.941 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 11:53:15.985 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 11:53:16.177 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 11:53:16.443 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@450cc4ce
+2024-03-19 11:53:16.445 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 11:53:16.459 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 11:53:16.461 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 11:53:17.120 [restartedMain] ERROR o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [user_prompt] in table [prompt]
+2024-03-19 11:53:17.121 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [user_prompt] in table [prompt]
+2024-03-19 11:53:17.122 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 11:53:17.131 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 11:53:17.132 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2024-03-19 11:53:17.148 [restartedMain] INFO  o.s.b.a.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-19 11:53:17.166 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [user_prompt] in table [prompt]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1132)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at com.edu.xmu.rag.MainApplication.main(MainApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [user_prompt] in table [prompt]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1758)
+	... 21 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [user_prompt] in table [prompt]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:144)
+	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:96)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:74)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:293)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:336)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1423)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 25 common frames omitted
+2024-03-19 11:55:41.358 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 11:55:41.390 [restartedMain] INFO  com.edu.xmu.rag.MainApplication - Starting MainApplication using Java 17.0.2 with PID 7592 (D:\学习资料\毕设\rag\main\target\classes started by 小培 in D:\学习资料\毕设\rag)
+2024-03-19 11:55:41.390 [restartedMain] INFO  com.edu.xmu.rag.MainApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 11:55:41.432 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-03-19 11:55:41.433 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-03-19 11:55:42.070 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 11:55:42.123 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 5 JPA repository interfaces.
+2024-03-19 11:55:42.527 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=2115fd35-b87f-3649-aaaa-b55b281f7a28
+2024-03-19 11:55:43.023 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-03-19 11:55:43.024 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-03-19 11:55:43.024 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2024-03-19 11:55:43.026 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2024-03-19 11:55:43.031 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-19 11:55:43.033 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-19 11:55:43.033 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-03-19 11:55:43.100 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-19 11:55:43.100 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1667 ms
+2024-03-19 11:55:43.297 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 11:55:43.327 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 11:55:43.483 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 11:55:43.660 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d3ed129
+2024-03-19 11:55:43.662 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 11:55:43.672 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 11:55:43.673 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 11:55:44.235 [restartedMain] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 11:55:44.247 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 11:55:44.618 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 11:55:45.191 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-03-19 11:55:45.426 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 11:55:45.496 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-19 11:55:45.517 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-19 11:55:45.968 [restartedMain] INFO  com.edu.xmu.rag.MainApplication - Started MainApplication in 5.145 seconds (process running for 6.167)
+2024-03-19 11:55:55.903 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 11:55:55.905 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 11:55:55.916 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
