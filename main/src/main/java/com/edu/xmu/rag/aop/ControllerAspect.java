@@ -1,4 +1,4 @@
-package com.edu.xmu.rag.core.aop;
+package com.edu.xmu.rag.aop;
 
 import com.edu.xmu.rag.core.exception.BusinessException;
 import com.edu.xmu.rag.core.model.ReturnNo;
@@ -32,7 +32,7 @@ public class ControllerAspect {
     /**
      * 所有返回值为ReturnObject的Controller
      */
-    @Around("com.edu.xmu.rag.core.aop.CommonPointCuts.controller()")
+    @Around("com.edu.xmu.rag.aop.CommonPointCuts.controller()")
     public Object doAround(ProceedingJoinPoint jp) throws Throwable {
         ReturnObject retVal;
 

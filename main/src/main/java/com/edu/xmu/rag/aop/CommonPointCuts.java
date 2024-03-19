@@ -1,4 +1,4 @@
-package com.edu.xmu.rag.core.aop;
+package com.edu.xmu.rag.aop;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;

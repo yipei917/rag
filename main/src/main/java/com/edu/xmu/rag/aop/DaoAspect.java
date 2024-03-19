@@ -1,4 +1,4 @@
-package com.edu.xmu.rag.core.aop;
+package com.edu.xmu.rag.aop;
 
 import com.edu.xmu.rag.core.exception.BusinessException;
 import com.edu.xmu.rag.core.model.ReturnNo;
@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 public class DaoAspect {
     private final Logger logger = LoggerFactory.getLogger(DaoAspect.class);
 
-    @Around("com.edu.xmu.rag.core.aop.CommonPointCuts.dao()")
+    @Around("com.edu.xmu.rag.aop.CommonPointCuts.dao()")
     public Object doAround(ProceedingJoinPoint jp) throws Throwable {
         Object obj;
 

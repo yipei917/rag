@@ -46,7 +46,7 @@ public class KnowledgeBaseDao {
 
         Optional<KnowledgeBasePo> po = knowledgeBasePoMapper.findById(id);
         if (po.isPresent()) {
-            return cloneObj(po, KnowledgeBase.class);
+            return cloneObj(po.get(), KnowledgeBase.class);
         } else {
             throw new BusinessException(ReturnNo.RESOURCE_ID_NOT_EXIST, String.format(ReturnNo.RESOURCE_ID_NOT_EXIST.getMessage(), "知识库", id));
         }

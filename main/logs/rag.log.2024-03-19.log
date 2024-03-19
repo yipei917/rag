@@ -1,0 +1,612 @@
+2024-03-19 18:54:04.251 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 18:54:04.303 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 29244 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 18:54:04.304 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 18:54:04.306 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 18:54:05.353 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 18:54:05.545 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 177 ms. Found 5 JPA repository interfaces.
+2024-03-19 18:54:06.298 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 18:54:06.771 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 18:54:06.845 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 18:54:07.395 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 18:54:07.786 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@47b961e2
+2024-03-19 18:54:07.789 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 18:54:07.807 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 18:54:07.808 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 18:54:08.851 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 18:54:08.859 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 18:54:09.893 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 18:54:11.529 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 18:54:11.651 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 7.991 seconds (process running for 9.364)
+2024-03-19 18:54:12.049 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=chenyipei, password=xxxxxx, status=0, type=0, token=null)
+2024-03-19 18:54:12.276 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 18:54:12.284 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 18:54:12.311 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 18:56:53.814 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 18:56:53.863 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 30452 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 18:56:53.864 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 18:56:53.865 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 18:56:55.139 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 18:56:55.332 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 183 ms. Found 5 JPA repository interfaces.
+2024-03-19 18:56:56.366 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 18:56:56.986 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 18:56:57.057 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 18:56:57.610 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 18:56:58.113 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38ebc866
+2024-03-19 18:56:58.116 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 18:56:58.132 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 18:56:58.134 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 18:56:59.148 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 18:56:59.156 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 18:57:00.059 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 18:57:01.703 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 18:57:01.816 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 8.862 seconds (process running for 10.618)
+2024-03-19 18:57:02.166 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=chenyipei, password=xxxxxx, status=0, type=0, token=null)
+2024-03-19 18:57:02.245 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 5
+2024-03-19 18:57:02.362 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 18:57:02.365 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 18:57:02.384 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:16:01.557 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:16:01.598 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 30268 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:16:01.599 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:16:01.601 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:16:02.632 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:16:02.774 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 135 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:16:03.507 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:16:03.991 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:16:04.060 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:16:04.620 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:16:05.062 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@62360a68
+2024-03-19 19:16:05.066 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:16:05.083 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:16:05.084 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:16:06.222 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:16:06.229 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:16:07.198 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:16:09.167 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:16:09.270 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 8.287 seconds (process running for 9.613)
+2024-03-19 19:16:09.588 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=chenyipei, password=password, status=0, type=0, token=null)
+2024-03-19 19:16:09.653 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 6
+2024-03-19 19:16:09.747 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:16:09.751 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:16:09.765 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:17:41.716 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:17:41.759 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 7292 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:17:41.760 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:17:41.761 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:17:42.811 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:17:42.962 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 144 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:17:43.768 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:17:44.740 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:17:44.857 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:17:45.941 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:17:46.402 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1b98355f
+2024-03-19 19:17:46.408 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:17:46.430 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:17:46.433 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:17:47.928 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:17:47.941 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:17:49.260 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:17:51.944 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:17:52.121 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 11.032 seconds (process running for 12.49)
+2024-03-19 19:17:52.553 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:17:52.632 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 7
+2024-03-19 19:17:52.919 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:17:52.925 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:17:52.957 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:22:52.501 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:22:52.547 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 4548 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:22:52.548 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:22:52.549 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:22:53.599 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:22:53.742 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 136 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:22:54.651 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:22:55.594 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:22:55.688 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:22:56.552 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:22:56.991 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f793f15
+2024-03-19 19:22:56.994 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:22:57.016 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:22:57.018 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:22:58.040 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:22:58.048 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:22:59.164 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:23:01.342 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:23:01.672 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 9.772 seconds (process running for 12.078)
+2024-03-19 19:23:02.153 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:23:02.226 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 8
+2024-03-19 19:23:02.228 [main] DEBUG com.edu.xmu.rag.dao.UserDao - saveUser: po = UserPo(id=8, account=1351049203, name=test, password=password, status=0, type=1, token=null)
+2024-03-19 19:23:02.230 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getId
+2024-03-19 19:23:02.230 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getAccount
+2024-03-19 19:23:02.230 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getName
+2024-03-19 19:23:02.230 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getPassword
+2024-03-19 19:23:02.230 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getStatus
+2024-03-19 19:23:02.230 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getType
+2024-03-19 19:23:02.230 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getToken
+2024-03-19 19:23:02.231 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getSql : sql = update user set account = 1351049203, name = 'test', password = 'password', status = 0, type = 1 where id = 8;
+2024-03-19 19:23:02.283 [main] DEBUG com.edu.xmu.rag.dao.UserDao - saveUser: saved = UserPo(id=8, account=1351049203, name=test, password=password, status=0, type=1, token=null)
+2024-03-19 19:23:02.398 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:23:02.402 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:23:02.421 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:24:51.277 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:24:51.326 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 10508 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:24:51.327 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:24:51.328 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:24:52.427 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:24:52.585 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 149 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:24:53.341 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:24:53.845 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:24:53.911 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:24:54.448 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:24:54.906 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@66314fee
+2024-03-19 19:24:54.908 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:24:54.922 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:24:54.924 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:24:55.929 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:24:55.939 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:24:56.931 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:24:58.494 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:24:58.606 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 7.986 seconds (process running for 9.527)
+2024-03-19 19:24:58.925 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:24:59.009 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 9
+2024-03-19 19:24:59.012 [main] DEBUG com.edu.xmu.rag.dao.UserDao - saveUser: po = UserPo(id=9, account=1351049203, name=test, password=password, status=0, type=1, token=null)
+2024-03-19 19:24:59.013 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getId
+2024-03-19 19:24:59.013 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getAccount
+2024-03-19 19:24:59.014 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getName
+2024-03-19 19:24:59.014 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getPassword
+2024-03-19 19:24:59.014 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getStatus
+2024-03-19 19:24:59.014 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getType
+2024-03-19 19:24:59.014 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getToken
+2024-03-19 19:24:59.014 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getSql : sql = update user set account = 1351049203, name = 'test', password = 'password', status = 0, type = 1 where id = 9;
+2024-03-19 19:24:59.074 [main] DEBUG com.edu.xmu.rag.dao.UserDao - saveUser: saved = UserPo(id=9, account=1351049203, name=test, password=password, status=0, type=1, token=null)
+2024-03-19 19:24:59.124 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:24:59.127 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 10
+2024-03-19 19:24:59.208 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:24:59.211 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 11
+2024-03-19 19:24:59.224 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:24:59.227 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 12
+2024-03-19 19:24:59.274 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:24:59.278 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:24:59.297 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:27:01.087 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:27:01.127 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 31484 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:27:01.127 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:27:01.128 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:27:02.228 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:27:02.368 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 134 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:27:03.089 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:27:03.549 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:27:03.632 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:27:04.173 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:27:04.606 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1b98355f
+2024-03-19 19:27:04.608 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:27:04.623 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:27:04.625 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:27:05.661 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:27:05.670 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:27:06.646 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:27:08.290 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:27:08.413 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 7.868 seconds (process running for 9.212)
+2024-03-19 19:27:08.682 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:27:08.745 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 13
+2024-03-19 19:27:08.866 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:27:08.869 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:27:08.884 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:27:26.648 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:27:26.705 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 4116 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:27:26.705 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:27:26.707 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:27:27.802 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:27:27.943 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 132 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:27:28.748 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:27:29.254 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:27:29.355 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:27:29.914 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:27:30.337 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@380e33c2
+2024-03-19 19:27:30.341 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:27:30.361 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:27:30.364 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:27:31.410 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:27:31.418 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:27:32.388 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:27:33.914 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:27:34.025 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 7.939 seconds (process running for 9.196)
+2024-03-19 19:27:34.379 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:27:34.461 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 14
+2024-03-19 19:27:34.569 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:27:34.572 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:27:34.586 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:27:53.587 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:27:53.633 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 7764 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:27:53.633 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:27:53.634 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:27:54.720 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:27:54.869 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 141 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:27:55.700 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:27:56.219 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:27:56.305 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:27:56.867 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:27:57.269 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f5ae29e
+2024-03-19 19:27:57.272 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:27:57.289 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:27:57.291 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:27:58.291 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:27:58.300 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:27:59.243 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:28:00.758 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:28:00.881 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 7.836 seconds (process running for 9.127)
+2024-03-19 19:28:01.155 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:28:01.220 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 15
+2024-03-19 19:28:01.319 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:28:01.322 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:28:01.336 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:33:59.620 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:33:59.666 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 13976 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:33:59.666 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:33:59.667 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:34:00.735 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:34:00.878 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 135 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:34:01.736 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:34:02.292 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:34:02.378 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:34:02.977 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:34:03.443 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7962a746
+2024-03-19 19:34:03.446 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:34:03.468 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:34:03.470 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:34:04.533 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:34:04.544 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:34:06.408 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:34:09.075 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:34:09.225 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 10.149 seconds (process running for 11.466)
+2024-03-19 19:34:09.608 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:34:09.702 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 16
+2024-03-19 19:34:09.704 [main] DEBUG com.edu.xmu.rag.dao.UserDao - saveUser: po = UserPo(id=16, account=1351049203, name=test, password=password, status=0, type=1, token=null)
+2024-03-19 19:34:09.706 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getId
+2024-03-19 19:34:09.706 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getAccount
+2024-03-19 19:34:09.706 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getName
+2024-03-19 19:34:09.706 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getPassword
+2024-03-19 19:34:09.707 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getStatus
+2024-03-19 19:34:09.707 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getType
+2024-03-19 19:34:09.707 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getToken
+2024-03-19 19:34:09.707 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getSql : sql = update user set account = 1351049203, name = 'test', password = 'password', status = 0, type = 1 where id = 16;
+2024-03-19 19:34:09.769 [main] DEBUG com.edu.xmu.rag.dao.UserDao - saveUser: saved = UserPo(id=16, account=1351049203, name=test, password=password, status=0, type=1, token=null)
+2024-03-19 19:34:09.873 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:34:09.879 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 17
+2024-03-19 19:34:09.997 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:34:10.001 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 18
+2024-03-19 19:34:10.014 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:34:10.018 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 19
+2024-03-19 19:34:10.072 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:34:10.076 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:34:10.098 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:35:04.804 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:35:04.846 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 23068 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:35:04.847 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:35:04.848 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:35:05.904 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:35:06.039 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 123 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:35:06.858 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:35:07.355 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:35:07.437 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:35:07.993 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:35:08.459 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@772cf46b
+2024-03-19 19:35:08.464 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:35:08.481 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:35:08.483 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:35:09.419 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:35:09.429 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:35:10.386 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:35:12.050 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:35:12.165 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 7.895 seconds (process running for 9.13)
+2024-03-19 19:35:12.467 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:35:12.545 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 20
+2024-03-19 19:35:12.647 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:35:12.650 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:35:12.664 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:35:56.057 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:35:56.104 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 26444 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:35:56.105 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:35:56.106 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:35:57.229 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:35:57.377 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 135 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:35:58.216 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:35:58.814 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:35:58.909 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:35:59.458 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:35:59.902 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e756867
+2024-03-19 19:35:59.905 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:35:59.924 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:35:59.926 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:36:00.912 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:36:00.921 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:36:01.866 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:36:03.413 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:36:03.520 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 8.021 seconds (process running for 9.272)
+2024-03-19 19:36:03.843 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:36:03.937 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 21
+2024-03-19 19:36:04.053 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:36:04.056 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:36:04.072 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:37:00.885 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:37:00.936 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 29276 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:37:00.937 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:37:00.938 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:37:01.947 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:37:02.085 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 130 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:37:02.827 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:37:03.312 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:37:03.378 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:37:03.832 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:37:04.184 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b90cc1
+2024-03-19 19:37:04.186 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:37:04.205 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:37:04.207 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:37:05.204 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:37:05.211 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:37:06.199 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:37:07.805 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:37:07.916 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 7.588 seconds (process running for 8.842)
+2024-03-19 19:37:08.251 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:37:08.318 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 22
+2024-03-19 19:37:08.419 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:37:08.421 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:37:08.436 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:38:16.330 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:38:16.375 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 22696 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:38:16.376 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:38:16.377 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:38:17.473 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:38:17.625 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 144 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:38:18.508 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:38:19.096 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:38:19.169 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:38:19.599 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:38:20.041 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77f4038c
+2024-03-19 19:38:20.045 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:38:20.065 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:38:20.066 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:38:21.208 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:38:21.217 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:38:22.365 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:38:24.295 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:38:24.435 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 8.713 seconds (process running for 10.827)
+2024-03-19 19:38:24.946 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:38:25.030 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 23
+2024-03-19 19:38:35.511 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:38:35.514 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:38:35.529 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:38:43.701 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:38:43.743 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 33036 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:38:43.743 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:38:43.744 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:38:44.922 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:38:45.073 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 136 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:38:45.908 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:38:46.486 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:38:46.573 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:38:47.142 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:38:47.607 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2110684a
+2024-03-19 19:38:47.611 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:38:47.632 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:38:47.634 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:38:48.798 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:38:48.808 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:38:49.988 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:38:51.910 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:38:52.057 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 8.972 seconds (process running for 10.417)
+2024-03-19 19:38:52.602 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:38:52.720 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 24
+2024-03-19 19:39:21.475 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:39:21.477 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:39:21.492 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:40:11.274 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:40:11.323 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 32956 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:40:11.324 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:40:11.325 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:40:12.472 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:40:12.618 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 139 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:40:13.425 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:40:14.013 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:40:14.102 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:40:14.740 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:40:15.227 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ecdcfe3
+2024-03-19 19:40:15.230 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:40:15.256 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:40:15.258 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:40:16.502 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:40:16.511 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:40:17.538 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:40:19.366 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:40:19.545 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 8.879 seconds (process running for 10.407)
+2024-03-19 19:40:19.991 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:40:20.059 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 25
+2024-03-19 19:40:55.260 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:40:55.263 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:40:55.276 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:40:59.242 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:40:59.284 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 24028 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:40:59.285 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:40:59.286 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:41:00.431 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:41:00.576 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 134 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:41:01.436 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:41:02.059 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:41:02.168 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:41:02.910 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:41:03.344 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f80d8c
+2024-03-19 19:41:03.348 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:41:03.367 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:41:03.369 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:41:04.441 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:41:04.450 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:41:05.500 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:41:07.527 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:41:07.668 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 9.028 seconds (process running for 10.546)
+2024-03-19 19:41:08.115 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:41:08.200 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 26
+2024-03-19 19:42:14.435 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:42:14.438 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:42:14.452 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:42:20.178 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:42:20.219 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 33300 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:42:20.221 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:42:20.222 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:42:21.322 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:42:21.460 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 129 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:42:22.274 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:42:22.869 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:42:22.954 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:42:23.681 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:42:24.184 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5af40e45
+2024-03-19 19:42:24.186 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:42:24.205 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:42:24.207 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:42:25.375 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:42:25.385 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:42:26.515 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:42:28.599 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:42:28.758 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 9.166 seconds (process running for 10.586)
+2024-03-19 19:42:29.225 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:42:29.335 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 27
+2024-03-19 19:42:51.262 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:42:51.265 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:42:51.275 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:43:50.333 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:43:50.374 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 19548 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:43:50.375 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:43:50.376 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:43:51.432 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:43:51.577 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 136 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:43:52.372 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:43:52.894 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:43:52.969 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:43:53.442 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:43:53.835 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@49a06087
+2024-03-19 19:43:53.838 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:43:53.856 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:43:53.857 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:43:54.886 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:43:54.895 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:43:55.959 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:43:57.897 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:43:58.050 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 8.307 seconds (process running for 9.725)
+2024-03-19 19:46:48.830 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m54s887ms628µs100ns).
+2024-03-19 19:46:51.792 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:46:51.842 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 28
+2024-03-19 19:47:56.120 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m7s290ms311µs800ns).
+2024-03-19 19:48:53.576 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:48:53.579 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:48:53.593 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:49:14.993 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:49:15.043 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 26212 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:49:15.044 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:49:15.045 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:49:16.164 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:49:16.311 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 139 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:49:17.079 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:49:17.687 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:49:17.758 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:49:18.432 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:49:18.871 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ee581db
+2024-03-19 19:49:18.874 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:49:18.892 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:49:18.893 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:49:20.116 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:49:20.124 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:49:21.247 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:49:23.133 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:49:23.283 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 8.88 seconds (process running for 10.309)
+2024-03-19 19:49:26.866 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:49:26.922 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 29
+2024-03-19 19:50:15.520 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56s540ms932µs800ns).
+2024-03-19 19:51:02.472 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:51:02.474 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:51:02.490 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:51:06.978 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:51:07.018 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 24928 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:51:07.019 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:51:07.020 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:51:08.110 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:51:08.250 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 131 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:51:09.008 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:51:09.613 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:51:09.691 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:51:10.379 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:51:10.856 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3ff26c9
+2024-03-19 19:51:10.858 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:51:10.884 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:51:10.886 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:51:12.113 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:51:12.123 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:51:13.328 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:51:15.176 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:51:15.332 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 8.942 seconds (process running for 10.875)
+2024-03-19 19:51:31.797 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:51:31.842 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 30
+2024-03-19 19:52:19.041 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:52:19.044 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:52:19.066 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:52:50.653 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:52:50.705 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 7632 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:52:50.706 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:52:50.707 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:52:51.787 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:52:51.952 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 157 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:52:52.746 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:52:53.271 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:52:53.344 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:52:53.941 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:52:54.367 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45ad3cd8
+2024-03-19 19:52:54.370 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:52:54.388 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:52:54.390 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:52:55.820 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:52:55.840 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:52:57.078 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:52:58.913 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:52:59.050 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 8.953 seconds (process running for 10.303)
+2024-03-19 19:52:59.453 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:52:59.532 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 31
+2024-03-19 19:52:59.655 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:52:59.658 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:52:59.678 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-19 19:53:04.705 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-19 19:53:04.745 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Starting UserDaoTest using Java 17.0.2 with PID 31628 (started by 小培 in D:\学习资料\毕设\rag\main)
+2024-03-19 19:53:04.746 [main] DEBUG com.edu.xmu.rag.dao.UserDaoTest - Running with Spring Boot v3.0.4, Spring v6.0.6
+2024-03-19 19:53:04.747 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - No active profile set, falling back to 1 default profile: "default"
+2024-03-19 19:53:05.848 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-19 19:53:06.006 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 151 ms. Found 5 JPA repository interfaces.
+2024-03-19 19:53:06.785 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=04bf4922-9399-3b2a-952b-d6b5c51188da
+2024-03-19 19:53:07.248 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-19 19:53:07.322 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-03-19 19:53:07.816 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-19 19:53:08.253 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6adcf059
+2024-03-19 19:53:08.257 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-19 19:53:08.298 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-03-19 19:53:08.302 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-19 19:53:09.481 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-19 19:53:09.494 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:53:10.819 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-19 19:53:12.915 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-19 19:53:13.078 [main] INFO  com.edu.xmu.rag.dao.UserDaoTest - Started UserDaoTest in 8.957 seconds (process running for 10.562)
+2024-03-19 19:53:13.500 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:53:13.596 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 32
+2024-03-19 19:53:13.598 [main] DEBUG com.edu.xmu.rag.dao.UserDao - saveUser: po = UserPo(id=32, account=1351049203, name=test, password=password, status=0, type=1, token=null)
+2024-03-19 19:53:13.599 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getId
+2024-03-19 19:53:13.600 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getAccount
+2024-03-19 19:53:13.600 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getName
+2024-03-19 19:53:13.600 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getPassword
+2024-03-19 19:53:13.600 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getStatus
+2024-03-19 19:53:13.600 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getType
+2024-03-19 19:53:13.600 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getValueByPropertyName : method = getToken
+2024-03-19 19:53:13.600 [main] INFO  c.e.x.r.core.jpa.SelectiveUpdateJpaRepositoryImpl - getSql : sql = update user set account = 1351049203, name = 'test', password = 'password', status = 0, type = 1 where id = 32;
+2024-03-19 19:53:13.670 [main] DEBUG com.edu.xmu.rag.dao.UserDao - saveUser: saved = UserPo(id=32, account=1351049203, name=test, password=password, status=0, type=1, token=null)
+2024-03-19 19:53:13.753 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:53:13.758 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 33
+2024-03-19 19:53:13.874 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:53:13.879 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 34
+2024-03-19 19:53:13.893 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: po = UserPo(id=null, account=1351049203, name=test, password=password, status=0, type=0, token=null)
+2024-03-19 19:53:13.897 [main] DEBUG com.edu.xmu.rag.dao.UserDao - insertUser: id = 35
+2024-03-19 19:53:13.962 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-19 19:53:13.966 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-19 19:53:13.984 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
