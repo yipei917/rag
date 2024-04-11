@@ -16,3 +16,7 @@ server:
     threads:
       max: 200
       min-spare: 100
+
+page-size:
+  max: 1000
+  default: 10

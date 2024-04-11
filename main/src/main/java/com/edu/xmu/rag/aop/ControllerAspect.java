@@ -12,6 +12,7 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -21,12 +22,13 @@ import static com.edu.xmu.rag.core.model.Constants.BEGIN_TIME;
 import static com.edu.xmu.rag.core.model.Constants.END_TIME;
 
 @Aspect
+@Component
 public class ControllerAspect {
     private final Logger logger = LoggerFactory.getLogger(ControllerAspect.class);
 
-    @Value("${park.core.page-size.max}")
+    @Value("${page-size.max}")
     private int max_page_size;
-    @Value("${park.core.page-size.default}")
+    @Value("${page-size.default}")
     private int default_page_size;
 
     /**
