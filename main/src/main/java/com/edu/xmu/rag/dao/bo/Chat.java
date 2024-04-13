@@ -1,23 +1,28 @@
 package com.edu.xmu.rag.dao.bo;
 
+import com.edu.xmu.rag.dao.MessageDao;
 import com.edu.xmu.rag.dao.UserDao;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@AllArgsConstructor
 public class Chat implements Serializable {
     @Builder
-    public Chat(Long id, String title, Long userId, UserDao userDao) {
+    public Chat(Long id, String title, Long userId, User user, List<Message> messageList, UserDao userDao, MessageDao messageDao) {
         this.id = id;
         this.title = title;
         this.userId = userId;
+        this.user = user;
+        this.messageList = messageList;
         this.userDao = userDao;
+        this.messageDao = messageDao;
     }
+
 
     @Setter
     @Getter
@@ -45,8 +50,24 @@ public class Chat implements Serializable {
         return this.user;
     }
 
+    @JsonIgnore
+    @ToString.Exclude
+    private List<Message> messageList;
+
+    public List<Message> getMessageList() {
+        if (null == this.messageList && null != this.messageDao) {
+            this.messageList = messageDao.retrieveByChatId(this.id);
+        }
+        return this.messageList;
+    }
+
     @Setter
     @JsonIgnore
     @ToString.Exclude
     private UserDao userDao;
+
+    @Setter
+    @JsonIgnore
+    @ToString.Exclude
+    private MessageDao messageDao;
 }

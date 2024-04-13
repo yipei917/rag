@@ -21,7 +21,7 @@ public class KnowledgeBasePo {
 
     private String description;
 
-    private int status;
+    private Integer status;
 
     private Long userId;
 

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
 import static com.edu.xmu.rag.core.util.Common.putGmtFields;
@@ -38,6 +39,19 @@ public class UserDao {
         } else {
             throw new BusinessException(ReturnNo.RESOURCE_ID_NOT_EXIST, String.format(ReturnNo.RESOURCE_ID_NOT_EXIST.getMessage(), "用户", id));
         }
+    }
+
+    public Optional<User> findByName(String name) throws RuntimeException {
+        AtomicReference<User> user = new AtomicReference<>();
+        if (null != name) {
+            logger.debug("findObjByUserName: userName = {}", name);
+            Optional<UserPo> ret = this.userPoMapper.findByName(name);
+            ret.ifPresent(po -> user.set(cloneObj(po, User.class)));
+            if (null == user.get()) {
+                throw new BusinessException(ReturnNo.USER_INVALID_ACCOUNT,ReturnNo.USER_INVALID_ACCOUNT.getMessage());
+            }
+        }
+        return Optional.of(user.get());
     }
 
     public User insert(User user) throws RuntimeException {

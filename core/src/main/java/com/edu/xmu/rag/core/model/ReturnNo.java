@@ -16,6 +16,8 @@ public enum ReturnNo {
     AUTH_ID_NOT_EXIST(12,"登录用户id不存在"),
     AUTH_USER_FORBIDDEN(13,"用户被禁止登录"),
     AUTH_NEED_LOGIN(14, "需要先登录"),
+    USER_INVALID_ACCOUNT(15, "用户名不存在或者密码错误"),
+    USER_NAME_EXIST(16,"用户名已被注册"),
     ;
 
     private final int errNo;

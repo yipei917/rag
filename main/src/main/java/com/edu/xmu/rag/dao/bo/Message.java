@@ -10,16 +10,14 @@ import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@AllArgsConstructor
 public class Message implements Serializable {
     @Builder
-    public Message(Long id, int role, String content, Long chatId, LocalDateTime gmtCreate, ChatDao chatDao) {
+    public Message(Long id, Integer role, String content, Long chatId, LocalDateTime gmtCreate) {
         this.id = id;
         this.role = role;
         this.content = content;
         this.chatId = chatId;
         this.gmtCreate = gmtCreate;
-        this.chatDao = chatDao;
     }
 
     @Setter
@@ -28,7 +26,7 @@ public class Message implements Serializable {
 
     @Setter
     @Getter
-    private int role;
+    private Integer role;
 
     @Setter
     @Getter
@@ -39,25 +37,6 @@ public class Message implements Serializable {
     private Long chatId;
 
     @Setter
-    @ToString.Exclude
-    private Chat chat;
-
-//    public Chat getChat() {
-//        if (null == this.getChat()) {
-//            return null;
-//        }
-//        if (null == this.chat && null != this.chatDao) {
-//            this.chat = this.chatDao.findChatById(this.chatId);
-//        }
-//        return this.chat;
-//    }
-
-    @Setter
     @Getter
     private LocalDateTime gmtCreate;
-
-    @Setter
-    @JsonIgnore
-    @ToString.Exclude
-    private ChatDao chatDao;
 }

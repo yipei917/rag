@@ -27,7 +27,6 @@ public class UserDaoTest {
     public void insertTest() {
         new User();
         User user = User.builder()
-                .account(1351049203L)
                 .name("test")
                 .password("password")
                 .status(0)
@@ -40,7 +39,6 @@ public class UserDaoTest {
     @Test
     public void findUserByIdTest1() {
         User user = User.builder()
-                .account(1351049203L)
                 .name("test")
                 .password("password")
                 .status(0)
@@ -59,7 +57,6 @@ public class UserDaoTest {
     @Test
     public void saveTest() {
         User user = User.builder()
-                .account(1351049203L)
                 .name("test")
                 .password("password")
                 .status(0)
@@ -74,7 +71,6 @@ public class UserDaoTest {
     @Test
     public void delByIdTest() {
         User user = User.builder()
-                .account(1351049203L)
                 .name("test")
                 .password("password")
                 .status(0)

@@ -12,7 +12,7 @@ import java.io.Serializable;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Model implements Serializable {
     @Builder
-    public Model(Long id, String code, String name, String description, int status, String product, Long rule, String url) {
+    public Model(Long id, String code, String name, String description, Integer status, String product, Long rule, String url) {
         this.id = id;
         this.code = code;
         this.name = name;
@@ -41,7 +41,7 @@ public class Model implements Serializable {
 
     @Setter
     @Getter
-    private int status;
+    private Integer status;
 
     @Setter
     @Getter

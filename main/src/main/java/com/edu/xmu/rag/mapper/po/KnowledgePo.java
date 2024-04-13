@@ -25,7 +25,7 @@ public class KnowledgePo {
 
     private String content;
 
-    private int status;
+    private Integer status;
 
     private LocalDateTime gmtCreate;
 

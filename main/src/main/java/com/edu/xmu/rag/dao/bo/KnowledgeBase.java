@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class KnowledgeBase implements Serializable {
     @Builder
-    public KnowledgeBase(Long id, String code, String description, int status, Long userId, LocalDateTime gmtCreate, LocalDateTime gmtModified, UserDao userDao) {
+    public KnowledgeBase(Long id, String code, String description, Integer status, Long userId, LocalDateTime gmtCreate, LocalDateTime gmtModified, UserDao userDao) {
         this.id = id;
         this.code = code;
         this.description = description;
@@ -38,7 +38,7 @@ public class KnowledgeBase implements Serializable {
 
     @Setter
     @Getter
-    private int status;
+    private Integer status;
 
     @Setter
     @Getter

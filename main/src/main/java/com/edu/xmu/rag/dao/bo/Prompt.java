@@ -13,6 +13,22 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 public class Prompt implements Serializable {
+    @Builder
+    public Prompt(Long id, String name, String code, Integer status, String systemPrompt, String userPrompt, Long modelId, Long userId, LocalDateTime gmtCreate, LocalDateTime gmtModified, ModelDao modelDao, UserDao userDao) {
+        this.id = id;
+        this.name = name;
+        this.code = code;
+        this.status = status;
+        this.systemPrompt = systemPrompt;
+        this.userPrompt = userPrompt;
+        this.modelId = modelId;
+        this.userId = userId;
+        this.gmtCreate = gmtCreate;
+        this.gmtModified = gmtModified;
+        this.modelDao = modelDao;
+        this.userDao = userDao;
+    }
+
     @Setter
     @Getter
     private Long id;
@@ -27,7 +43,7 @@ public class Prompt implements Serializable {
 
     @Setter
     @Getter
-    private int status;
+    private Integer status;
 
     @Setter
     @Getter

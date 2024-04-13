@@ -21,7 +21,7 @@ public class PromptPo {
 
     private String code;
 
-    private int status;
+    private Integer status;
 
     private String systemPrompt;
 

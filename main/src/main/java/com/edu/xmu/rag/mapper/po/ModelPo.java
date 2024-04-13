@@ -21,7 +21,7 @@ public class ModelPo {
 
     private String description;
 
-    private int status;
+    private Integer status;
 
     private String product;
 

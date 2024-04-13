@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class MessageVo {
-    private int role;
+    private Integer role;
     private String content;
 }

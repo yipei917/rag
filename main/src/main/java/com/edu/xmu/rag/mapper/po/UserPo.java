@@ -15,15 +15,13 @@ public class UserPo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long account;
-
     private String name;
 
     private String password;
 
-    private int status;
+    private Integer status;
 
-    private int type;
+    private Integer type;
 
     private String token;
 }

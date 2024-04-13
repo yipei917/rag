@@ -1,14 +1,14 @@
 package com.edu.xmu.rag.controller;
 
 import com.edu.xmu.rag.controller.vo.MessageVo;
+import com.edu.xmu.rag.controller.vo.UserVo;
 import com.edu.xmu.rag.core.model.ReturnObject;
 import com.edu.xmu.rag.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(produces = "application/json;charset=UTF-8")
@@ -27,4 +27,13 @@ public class UserController {
         return new ReturnObject(new MessageVo());
     }
 
+    @PostMapping("/user/register")
+    public ReturnObject createUser(@Validated @RequestBody UserVo userVo){
+        return userService.register(userVo);
+    }
+
+    @PostMapping("/user/login")
+    public ReturnObject login(@Validated @RequestBody UserVo userVo){
+        return userService.login(userVo);
+    }
 }

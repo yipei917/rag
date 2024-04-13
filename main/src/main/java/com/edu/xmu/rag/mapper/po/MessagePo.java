@@ -17,7 +17,7 @@ public class MessagePo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int role;
+    private Integer role;
 
     private String content;
 

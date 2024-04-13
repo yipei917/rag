@@ -8,7 +8,7 @@ import lombok.Getter;
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ReturnObject {
-    @JsonIgnore
+    @JsonProperty(value = "code")
     ReturnNo code;
 
     @JsonProperty(value = "errMsg")

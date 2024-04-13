@@ -9,9 +9,8 @@ import java.io.Serializable;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class User implements Serializable {
     @Builder
-    public User(Long id, Long account, String name, String password, int status, int type, String token) {
+    public User(Long id, String name, String password, Integer status, Integer type, String token) {
         this.id = id;
-        this.account = account;
         this.name = name;
         this.password = password;
         this.status = status;
@@ -25,10 +24,6 @@ public class User implements Serializable {
 
     @Setter
     @Getter
-    private Long account;
-
-    @Setter
-    @Getter
     private String name;
 
     @Setter
@@ -37,11 +32,11 @@ public class User implements Serializable {
 
     @Setter
     @Getter
-    private int status;
+    private Integer status;
 
     @Setter
     @Getter
-    private int type;
+    private Integer type;
 
     @Setter
     @Getter
