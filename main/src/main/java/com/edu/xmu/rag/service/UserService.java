@@ -48,7 +48,7 @@ public class UserService {
     public ReturnObject login(UserVo user) {
         User ret = userDao.findByName(user.getName()).orElse(null);
         if (ret != null && ret.getPassword().equals(user.getPassword())) {
-            return new ReturnObject(ReturnNo.OK);
+            return new ReturnObject(cloneObj(ret, UserVo.class));
         } else {
             throw new BusinessException(ReturnNo.USER_INVALID_ACCOUNT, ReturnNo.USER_INVALID_ACCOUNT.getMessage());
         }
