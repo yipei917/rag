@@ -17,7 +17,7 @@ public class JacksonUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(JacksonUtil.class);
 
-    private static final Set<String> PRIMITIVE_TYPE = new HashSet<>(){
+    private static final Set<String> PRIMITIVE_TYPE = new HashSet<String>(){
         {
             add(Integer.class.getName());
             add(Long.class.getName());
