@@ -1,5 +1,6 @@
 package com.edu.xmu.rag.service;
 
+import com.edu.xmu.rag.controller.vo.ChatVo;
 import com.edu.xmu.rag.controller.vo.MessageVo;
 import com.edu.xmu.rag.core.exception.BusinessException;
 import com.edu.xmu.rag.core.model.ReturnObject;
@@ -41,5 +42,15 @@ public class ChatService {
     public ReturnObject findMessageListByChatId(Long id) throws RuntimeException {
         List<Message> res = messageDao.retrieveByChatId(id);
         return new ReturnObject(res.stream().sorted(Comparator.comparing(Message::getGmtCreate)).map(bo -> cloneObj(bo, MessageVo.class)).toList());
+    }
+
+    /**
+     * 根据用户Id获取聊天列表
+     * @param id 用户id
+     * @return ChatVo List
+     */
+    public ReturnObject findChatListByUserId(Long id) throws RuntimeException {
+        List<Chat> res = chatDao.retrieveByUserId(id);
+        return new ReturnObject(res.stream().map(bo -> cloneObj(bo, ChatVo.class)).toList());
     }
 }

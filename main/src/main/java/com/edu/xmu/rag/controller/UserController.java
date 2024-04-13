@@ -22,11 +22,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("messagelist")
-    public ReturnObject getMessageList() {
-        return new ReturnObject(new MessageVo());
-    }
-
     @PostMapping("/user/register")
     public ReturnObject createUser(@Validated @RequestBody UserVo userVo){
         return userService.register(userVo);

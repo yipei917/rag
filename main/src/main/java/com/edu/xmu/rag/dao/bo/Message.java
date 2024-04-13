@@ -24,6 +24,11 @@ public class Message implements Serializable {
     @Getter
     private Long id;
 
+    /*
+    0：system
+    1：assistant
+    2：user
+     */
     @Setter
     @Getter
     private Integer role;

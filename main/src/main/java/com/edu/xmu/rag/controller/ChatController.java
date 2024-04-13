@@ -30,4 +30,9 @@ public class ChatController {
     public ReturnObject getMessages(@PathVariable Long id) {
         return chatService.findMessageListByChatId(id);
     }
+
+    @GetMapping("/chatList/{id}")
+    public ReturnObject getChatList(@PathVariable Long id) {
+        return chatService.findChatListByUserId(id);
+    }
 }

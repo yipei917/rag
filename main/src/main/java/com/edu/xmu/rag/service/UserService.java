@@ -26,6 +26,9 @@ public class UserService {
         this.userDao = userDao;
     }
 
+    /**
+     * 注册
+     */
     public ReturnObject register(UserVo user) {
         try {
             userDao.findByName(user.getName());
@@ -39,6 +42,9 @@ public class UserService {
         return new ReturnObject(ReturnNo.USER_NAME_EXIST);
     }
 
+    /**
+     * 登录
+     */
     public ReturnObject login(UserVo user) {
         User ret = userDao.findByName(user.getName()).orElse(null);
         if (ret != null && ret.getPassword().equals(user.getPassword())) {

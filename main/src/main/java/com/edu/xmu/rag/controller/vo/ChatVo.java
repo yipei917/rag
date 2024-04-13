@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MessageVo {
-    private Integer role;
-    private String content;
+public class ChatVo {
+    private Long id;
+    private String title;
 }
