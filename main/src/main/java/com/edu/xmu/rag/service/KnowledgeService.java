@@ -1,6 +1,5 @@
 package com.edu.xmu.rag.service;
 
-import com.edu.xmu.rag.controller.vo.KnowledgeBaseVo;
 import com.edu.xmu.rag.controller.vo.KnowledgeVo;
 import com.edu.xmu.rag.controller.vo.SimpleKnowledge;
 import com.edu.xmu.rag.controller.vo.SimpleKnowledgeBase;
@@ -17,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
 
@@ -41,13 +41,13 @@ public class KnowledgeService {
     public ReturnObject createKnowledgeBase(SimpleKnowledgeBase vo) {
         KnowledgeBase ret = cloneObj(vo, KnowledgeBase.class);
         ret.setStatus(1);
-        return new ReturnObject(knowledgeBaseDao.insert(ret));
+        return new ReturnObject(ReturnNo.CREATED, knowledgeBaseDao.insert(ret));
     }
 
     /*
     更新知识库
      */
-    public ReturnObject updateKnowledgeBase(KnowledgeBaseVo vo) {
+    public ReturnObject updateKnowledgeBase(SimpleKnowledgeBase vo) {
         KnowledgeBase bo = cloneObj(vo, KnowledgeBase.class);
         return new ReturnObject(knowledgeBaseDao.save(bo));
     }
@@ -102,15 +102,15 @@ public class KnowledgeService {
     public ReturnObject createKnowledge(SimpleKnowledge vo) {
         Knowledge ret = cloneObj(vo, Knowledge.class);
         ret.setStatus(1);
-        return new ReturnObject(knowledgeDao.insert(ret));
+        return new ReturnObject(ReturnNo.CREATED, cloneObj(knowledgeDao.insert(ret), KnowledgeVo.class));
     }
 
     /*
     更新知识
      */
-    public ReturnObject updateKnowledge(KnowledgeVo vo) {
+    public ReturnObject updateKnowledge(SimpleKnowledge vo) {
         Knowledge bo = cloneObj(vo, Knowledge.class);
-        return new ReturnObject(knowledgeDao.save(bo));
+        return new ReturnObject(cloneObj(knowledgeDao.insert(bo), KnowledgeVo.class));
     }
 
     /*
@@ -144,11 +144,11 @@ public class KnowledgeService {
     根据知识库id和知识code查询知识
      */
     public ReturnObject findKnowledge(Long id, String code) throws RuntimeException {
-        List<Knowledge> list = knowledgeDao.retrieveByKBId(id);
+        List<KnowledgeVo> list = knowledgeDao.retrieveByKBId(id).stream().map(bo -> cloneObj(bo, KnowledgeVo.class)).toList();
         if (code.equals("*")) {
-            return new ReturnObject(list);
+            return new ReturnObject(list.stream());
         } else {
-            return new ReturnObject(list.stream().filter(po -> po.getCode().equals(code)).toList());
+            return new ReturnObject(list.stream().filter(bo -> bo.getCode().equals(code)).toList());
         }
     }
 }

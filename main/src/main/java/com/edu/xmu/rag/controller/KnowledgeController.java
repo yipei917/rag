@@ -1,11 +1,9 @@
 package com.edu.xmu.rag.controller;
 
-import com.edu.xmu.rag.controller.vo.KnowledgeBaseVo;
 import com.edu.xmu.rag.controller.vo.KnowledgeVo;
 import com.edu.xmu.rag.controller.vo.SimpleKnowledge;
 import com.edu.xmu.rag.controller.vo.SimpleKnowledgeBase;
 import com.edu.xmu.rag.core.model.ReturnObject;
-import com.edu.xmu.rag.dao.bo.KnowledgeBase;
 import com.edu.xmu.rag.service.KnowledgeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +29,7 @@ public class KnowledgeController {
     }
 
     @PutMapping("/knowledgebase")
-    public ReturnObject updateKnowledgeBase(@Validated @RequestBody KnowledgeBaseVo vo) {
+    public ReturnObject updateKnowledgeBase(@Validated @RequestBody SimpleKnowledgeBase vo) {
         return knowledgeService.updateKnowledgeBase(vo);
     }
 
@@ -60,7 +58,7 @@ public class KnowledgeController {
     }
 
     @PutMapping("/knowledge")
-    public ReturnObject updateKnowledge(@Validated @RequestBody KnowledgeVo vo) {
+    public ReturnObject updateKnowledge(@Validated @RequestBody SimpleKnowledge vo) {
         return knowledgeService.updateKnowledge(vo);
     }
 
