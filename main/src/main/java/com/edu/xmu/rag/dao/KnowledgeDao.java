@@ -65,8 +65,8 @@ public class KnowledgeDao {
         return cloneObj(save, Knowledge.class);
     }
 
-    public ReturnObject delById(Knowledge bo) {
-        this.knowledgePoMapper.deleteById(bo.getId());
+    public ReturnObject delById(Long id) {
+        this.knowledgePoMapper.deleteById(id);
         return new ReturnObject(ReturnNo.OK);
     }
 

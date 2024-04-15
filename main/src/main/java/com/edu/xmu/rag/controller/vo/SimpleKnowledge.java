@@ -8,8 +8,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MessageVo {
-    @NotBlank(message = "角色不能为空")
-    private Integer role;
+public class SimpleKnowledge {
+    @NotBlank(message = "编码不能为空")
+    private String code;
+    @NotBlank(message = "知识库Id不能为空")
+    private Long kbId;
+    @NotBlank(message = "标题不能为空")
+    private String title;
     private String content;
 }
