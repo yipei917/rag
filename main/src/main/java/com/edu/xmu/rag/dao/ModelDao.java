@@ -43,7 +43,6 @@ public class ModelDao {
         ModelPo po = cloneObj(model, ModelPo.class);
         logger.debug("insertModel: po = {}", po);
         this.modelPoMapper.save(po);
-        logger.debug("insertModel: id = {}", po.getId());
         return cloneObj(po, Model.class);
     }
 
@@ -51,7 +50,6 @@ public class ModelDao {
         ModelPo po = cloneObj(model, ModelPo.class);
         logger.debug("saveModel: po = {}", po);
         ModelPo save = this.modelPoMapper.save(po);
-        logger.debug("saveModel: saved = {}", save);
         if (save.getId() == -1) {
             throw new BusinessException(ReturnNo.RESOURCE_ID_NOT_EXIST, String.format(ReturnNo.RESOURCE_ID_NOT_EXIST.getMessage(), "模型", model.getId()));
         }

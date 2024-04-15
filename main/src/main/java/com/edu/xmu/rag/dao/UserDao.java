@@ -58,7 +58,6 @@ public class UserDao {
         UserPo po = cloneObj(user, UserPo.class);
         logger.debug("insertUser: po = {}", po);
         this.userPoMapper.save(po);
-        logger.debug("insertUser: id = {}", po.getId());
         return cloneObj(po, User.class);
     }
 
@@ -66,7 +65,6 @@ public class UserDao {
         UserPo po = cloneObj(user, UserPo.class);
         logger.debug("saveUser: po = {}", po);
         UserPo save = this.userPoMapper.save(po);
-        logger.debug("saveUser: saved = {}", save);
         if (save.getId() == -1) {
             throw new BusinessException(ReturnNo.RESOURCE_ID_NOT_EXIST, String.format(ReturnNo.RESOURCE_ID_NOT_EXIST.getMessage(), "用户", user.getId()));
         }

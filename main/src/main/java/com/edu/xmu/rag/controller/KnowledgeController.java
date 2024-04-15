@@ -1,0 +1,53 @@
+package com.edu.xmu.rag.controller;
+
+import com.edu.xmu.rag.controller.vo.SimpleKnowledgeBase;
+import com.edu.xmu.rag.core.model.ReturnObject;
+import com.edu.xmu.rag.dao.bo.KnowledgeBase;
+import com.edu.xmu.rag.service.KnowledgeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(produces = "application/json;charset=UTF-8")
+public class KnowledgeController {
+    private static final Logger logger = LoggerFactory.getLogger(KnowledgeController.class);
+
+    private final KnowledgeService knowledgeService;
+
+    @Autowired
+    public KnowledgeController(KnowledgeService knowledgeService) {
+        this.knowledgeService = knowledgeService;
+    }
+
+    @PostMapping("/knowledgebase")
+    public ReturnObject createKnowledgeBase(@Validated @RequestBody SimpleKnowledgeBase vo) {
+        return knowledgeService.createKnowledgeBase(vo);
+    }
+
+    @PutMapping("/knowledgebase")
+    public ReturnObject updateKnowledgeBase(@Validated @RequestBody KnowledgeBase vo) {
+        return knowledgeService.updateKnowledgeBase(vo);
+    }
+
+    @DeleteMapping("/knowledgebase/{id}")
+    public ReturnObject delKnowledgeBase(@PathVariable Long id) {
+        return knowledgeService.delKnowledgeBase(id);
+    }
+
+    @PutMapping("/knowledgebase/{id}/{type}")
+    public ReturnObject changeKnowledgeBaseStatus(@PathVariable Long id, @PathVariable Integer type) {
+        if (type == 0) {
+            return knowledgeService.disableKnowledgeBase(id);
+        } else {
+            return knowledgeService.enableKnowledgeBase(id);
+        }
+    }
+
+//    @GetMapping("/knowledgebase")
+//    public ReturnObject findKnowledge() {
+//
+//    }
+}
