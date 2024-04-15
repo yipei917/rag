@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface KnowledgePoMapper extends JpaRepository<KnowledgePo, Long> {
-    Page<KnowledgePo> findMessagePoByKbId(Long id, Pageable pageable);
+    Page<KnowledgePo> findMessagePoByKbId(Long kbId, Pageable pageable);
 }

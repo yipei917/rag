@@ -3,17 +3,25 @@ package com.edu.xmu.rag.dao;
 import com.edu.xmu.rag.core.exception.BusinessException;
 import com.edu.xmu.rag.core.model.ReturnNo;
 import com.edu.xmu.rag.core.model.ReturnObject;
+import com.edu.xmu.rag.dao.bo.Knowledge;
 import com.edu.xmu.rag.dao.bo.KnowledgeBase;
 import com.edu.xmu.rag.dao.bo.User;
 import com.edu.xmu.rag.mapper.KnowledgeBasePoMapper;
 import com.edu.xmu.rag.mapper.po.KnowledgeBasePo;
+import com.edu.xmu.rag.mapper.po.KnowledgePo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
+import static com.edu.xmu.rag.core.model.Constants.MAX_RETURN;
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
 import static com.edu.xmu.rag.core.util.Common.putGmtFields;
 
@@ -73,8 +81,22 @@ public class KnowledgeBaseDao {
         return cloneObj(save, KnowledgeBase.class);
     }
 
-    public ReturnObject delById(KnowledgeBase bo) {
-        this.knowledgeBasePoMapper.deleteById(bo.getId());
+    public ReturnObject delById(Long id) {
+        this.knowledgeBasePoMapper.deleteById(id);
         return new ReturnObject(ReturnNo.OK);
+    }
+
+    public List<KnowledgeBase> retrieveByUserId(Long id) throws RuntimeException {
+        if (null == id) {
+            return null;
+        }
+
+        Pageable pageable = PageRequest.of(0, MAX_RETURN);
+        Page<KnowledgeBasePo> ret = knowledgeBasePoMapper.findKnowledgeBasePoByUserId(id, pageable);
+        if (ret.isEmpty()) {
+            return new ArrayList<>();
+        } else {
+            return ret.stream().map(po -> cloneObj(po, KnowledgeBase.class)).toList();
+        }
     }
 }
