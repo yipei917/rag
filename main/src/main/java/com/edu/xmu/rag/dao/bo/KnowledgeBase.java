@@ -1,5 +1,6 @@
 package com.edu.xmu.rag.dao.bo;
 
+import com.edu.xmu.rag.dao.KnowledgeDao;
 import com.edu.xmu.rag.dao.UserDao;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -7,13 +8,14 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 public class KnowledgeBase implements Serializable {
     @Builder
-    public KnowledgeBase(Long id, String code, String description, Integer status, Long userId, LocalDateTime gmtCreate, LocalDateTime gmtModified, UserDao userDao) {
+    public KnowledgeBase(Long id, String code, String description, Integer status, Long userId, LocalDateTime gmtCreate, LocalDateTime gmtModified, KnowledgeDao knowledgeDao) {
         this.id = id;
         this.code = code;
         this.description = description;
@@ -21,7 +23,7 @@ public class KnowledgeBase implements Serializable {
         this.userId = userId;
         this.gmtCreate = gmtCreate;
         this.gmtModified = gmtModified;
-        this.userDao = userDao;
+        this.knowledgeDao = knowledgeDao;
     }
 
     @Setter
@@ -44,18 +46,15 @@ public class KnowledgeBase implements Serializable {
     @Getter
     private Long userId;
 
-    @Setter
+    @JsonIgnore
     @ToString.Exclude
-    private User user;
+    private List<Knowledge> knowledgeList;
 
-    public User getUser() {
-        if (null == this.userId) {
-            return null;
+    public List<Knowledge> getKnowledgeList() {
+        if (null == this.knowledgeList && null != this.knowledgeDao) {
+            this.knowledgeList = knowledgeDao.retrieveByKBId(this.id);
         }
-        if (null == this.user && null != this.userDao) {
-            this.user = userDao.findUserById(this.userId);
-        }
-        return this.user;
+        return this.knowledgeList;
     }
 
     @Setter
@@ -66,8 +65,9 @@ public class KnowledgeBase implements Serializable {
     @Getter
     private LocalDateTime gmtModified;
 
+
     @Setter
     @JsonIgnore
     @ToString.Exclude
-    private UserDao userDao;
+    private KnowledgeDao knowledgeDao;
 }

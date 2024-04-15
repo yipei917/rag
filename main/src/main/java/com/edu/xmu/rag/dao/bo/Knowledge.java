@@ -1,7 +1,5 @@
 package com.edu.xmu.rag.dao.bo;
 
-import com.edu.xmu.rag.dao.KnowledgeBaseDao;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
@@ -10,10 +8,9 @@ import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@AllArgsConstructor
 public class Knowledge implements Serializable {
     @Builder
-    public Knowledge(Long id, String code, Long kbId, String title, String content, Integer status, LocalDateTime gmtCreate, LocalDateTime gmtModified, KnowledgeBaseDao knowledgeBaseDao) {
+    public Knowledge(Long id, String code, Long kbId, String title, String content, Integer status, LocalDateTime gmtCreate, LocalDateTime gmtModified) {
         this.id = id;
         this.code = code;
         this.kbId = kbId;
@@ -22,7 +19,6 @@ public class Knowledge implements Serializable {
         this.status = status;
         this.gmtCreate = gmtCreate;
         this.gmtModified = gmtModified;
-        this.knowledgeBaseDao = knowledgeBaseDao;
     }
 
     @Setter
@@ -36,31 +32,6 @@ public class Knowledge implements Serializable {
     @Setter
     @Getter
     private Long kbId;
-
-    @Setter
-    @ToString.Exclude
-    private KnowledgeBase knowledgeBase;
-
-    public KnowledgeBase getKnowledgeBase() {
-        if (null == this.kbId) {
-            return null;
-        }
-        if (null == this.knowledgeBase && null != this.knowledgeBaseDao) {
-            this.knowledgeBase = knowledgeBaseDao.findUserById(this.kbId);
-        }
-        return this.knowledgeBase;
-    }
-
-    @Setter
-    @ToString.Exclude
-    private User user;
-
-    public User getUser() {
-        if (null == this.getKnowledgeBase()) {
-            return null;
-        }
-        return this.knowledgeBase.getUser();
-    }
 
     @Setter
     @Getter
@@ -81,9 +52,4 @@ public class Knowledge implements Serializable {
     @Setter
     @Getter
     private LocalDateTime gmtModified;
-
-    @Setter
-    @JsonIgnore
-    @ToString.Exclude
-    private KnowledgeBaseDao knowledgeBaseDao;
 }
