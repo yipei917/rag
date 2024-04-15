@@ -3,6 +3,7 @@ package com.edu.xmu.rag.dao;
 import com.edu.xmu.rag.core.exception.BusinessException;
 import com.edu.xmu.rag.core.model.ReturnNo;
 import com.edu.xmu.rag.core.model.ReturnObject;
+import com.edu.xmu.rag.dao.bo.Message;
 import com.edu.xmu.rag.dao.bo.User;
 import com.edu.xmu.rag.mapper.UserPoMapper;
 import com.edu.xmu.rag.mapper.po.UserPo;
@@ -11,8 +12,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
 import static com.edu.xmu.rag.core.util.Common.putGmtFields;
@@ -74,5 +77,12 @@ public class UserDao {
     public ReturnObject delById(User user) {
         userPoMapper.deleteById(user.getId());
         return new ReturnObject(ReturnNo.OK);
+    }
+
+    public List<User> findAllUsers() {
+        List<UserPo> userPos = userPoMapper.findAll(); // 调用 MyBatis Mapper 查询所有用户记录
+        return userPos.stream()
+                .map(userPo -> cloneObj(userPo, User.class)) // 将 UserPo 转换为 User 对象
+                .collect(Collectors.toList());
     }
 }

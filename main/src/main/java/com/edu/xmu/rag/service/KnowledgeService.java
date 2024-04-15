@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
 
@@ -92,7 +93,7 @@ public class KnowledgeService {
         if (code.equals("*")) {
             return new ReturnObject(list);
         } else {
-            return new ReturnObject(list.stream().filter(po -> po.getCode().equals(code)).toList());
+            return new ReturnObject(list.stream().filter(po -> po.getCode().equals(code)).collect(Collectors.toList()));
         }
     }
 
@@ -148,7 +149,7 @@ public class KnowledgeService {
         if (code.equals("*")) {
             return new ReturnObject(list);
         } else {
-            return new ReturnObject(list.stream().filter(po -> po.getCode().equals(code)).toList());
+            return new ReturnObject(list.stream().filter(po -> po.getCode().equals(code)).collect(Collectors.toList()));
         }
     }
 }
