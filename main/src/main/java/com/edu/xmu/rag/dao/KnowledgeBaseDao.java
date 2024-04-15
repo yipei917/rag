@@ -3,12 +3,9 @@ package com.edu.xmu.rag.dao;
 import com.edu.xmu.rag.core.exception.BusinessException;
 import com.edu.xmu.rag.core.model.ReturnNo;
 import com.edu.xmu.rag.core.model.ReturnObject;
-import com.edu.xmu.rag.dao.bo.Knowledge;
 import com.edu.xmu.rag.dao.bo.KnowledgeBase;
-import com.edu.xmu.rag.dao.bo.User;
 import com.edu.xmu.rag.mapper.KnowledgeBasePoMapper;
 import com.edu.xmu.rag.mapper.po.KnowledgeBasePo;
-import com.edu.xmu.rag.mapper.po.KnowledgePo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,6 +90,16 @@ public class KnowledgeBaseDao {
 
         Pageable pageable = PageRequest.of(0, MAX_RETURN);
         Page<KnowledgeBasePo> ret = knowledgeBasePoMapper.findKnowledgeBasePoByUserId(id, pageable);
+        if (ret.isEmpty()) {
+            return new ArrayList<>();
+        } else {
+            return ret.stream().map(po -> cloneObj(po, KnowledgeBase.class)).toList();
+        }
+    }
+
+    public List<KnowledgeBase> retrieveAll() throws RuntimeException {
+        Pageable pageable = PageRequest.of(0, MAX_RETURN);
+        Page<KnowledgeBasePo> ret = knowledgeBasePoMapper.findAll(pageable);
         if (ret.isEmpty()) {
             return new ArrayList<>();
         } else {

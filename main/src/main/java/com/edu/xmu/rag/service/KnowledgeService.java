@@ -1,5 +1,8 @@
 package com.edu.xmu.rag.service;
 
+import com.edu.xmu.rag.controller.vo.KnowledgeBaseVo;
+import com.edu.xmu.rag.controller.vo.KnowledgeVo;
+import com.edu.xmu.rag.controller.vo.SimpleKnowledge;
 import com.edu.xmu.rag.controller.vo.SimpleKnowledgeBase;
 import com.edu.xmu.rag.core.model.ReturnNo;
 import com.edu.xmu.rag.core.model.ReturnObject;
@@ -41,10 +44,17 @@ public class KnowledgeService {
         return new ReturnObject(knowledgeBaseDao.insert(ret));
     }
 
-    public ReturnObject updateKnowledgeBase(KnowledgeBase vo) {
-        return new ReturnObject(knowledgeBaseDao.save(vo));
+    /*
+    更新知识库
+     */
+    public ReturnObject updateKnowledgeBase(KnowledgeBaseVo vo) {
+        KnowledgeBase bo = cloneObj(vo, KnowledgeBase.class);
+        return new ReturnObject(knowledgeBaseDao.save(bo));
     }
 
+    /*
+    启用知识库
+     */
     public ReturnObject enableKnowledgeBase(Long id) {
         KnowledgeBase bo = knowledgeBaseDao.findUserById(id);
         bo.setStatus(1);
@@ -52,6 +62,9 @@ public class KnowledgeService {
         return new ReturnObject(ReturnNo.OK);
     }
 
+    /*
+    禁用知识库
+     */
     public ReturnObject disableKnowledgeBase(Long id) {
         KnowledgeBase bo = knowledgeBaseDao.findUserById(id);
         bo.setStatus(0);
@@ -59,13 +72,83 @@ public class KnowledgeService {
         return new ReturnObject(ReturnNo.OK);
     }
 
+    /*
+    删除知识库
+     */
     public ReturnObject delKnowledgeBase(Long id) {
         return knowledgeBaseDao.delById(id);
     }
 
-    public ReturnObject findKnowledgeBaseByUserId(Long id) throws RuntimeException {
-        return new ReturnObject(knowledgeBaseDao.retrieveByUserId(id));
+    /*
+    根据用户id和知识库code查询知识库
+     */
+    public ReturnObject findKnowledgeBase(Long id, String code) throws RuntimeException {
+        List<KnowledgeBase> list;
+        if (0 == id) {
+            list = knowledgeBaseDao.retrieveAll();
+        } else {
+            list = knowledgeBaseDao.retrieveByUserId(id);
+        }
+        if (code.equals("*")) {
+            return new ReturnObject(list);
+        } else {
+            return new ReturnObject(list.stream().filter(po -> po.getCode().equals(code)).toList());
+        }
     }
 
+    /*
+    新建知识
+     */
+    public ReturnObject createKnowledge(SimpleKnowledge vo) {
+        Knowledge ret = cloneObj(vo, Knowledge.class);
+        ret.setStatus(1);
+        return new ReturnObject(knowledgeDao.insert(ret));
+    }
 
+    /*
+    更新知识
+     */
+    public ReturnObject updateKnowledge(KnowledgeVo vo) {
+        Knowledge bo = cloneObj(vo, Knowledge.class);
+        return new ReturnObject(knowledgeDao.save(bo));
+    }
+
+    /*
+    启用知识
+     */
+    public ReturnObject enableKnowledge(Long id) {
+        Knowledge bo = knowledgeDao.findUserById(id);
+        bo.setStatus(1);
+        knowledgeDao.save(bo);
+        return new ReturnObject(ReturnNo.OK);
+    }
+
+    /*
+    禁用知识
+     */
+    public ReturnObject disableKnowledge(Long id) {
+        Knowledge bo = knowledgeDao.findUserById(id);
+        bo.setStatus(0);
+        knowledgeDao.save(bo);
+        return new ReturnObject(ReturnNo.OK);
+    }
+
+    /*
+    删除知识
+     */
+    public ReturnObject delKnowledge(Long id) {
+        return knowledgeDao.delById(id);
+    }
+
+    /*
+    根据知识库id和知识code查询知识
+     */
+    public ReturnObject findKnowledge(Long id, String code) throws RuntimeException {
+        List<Knowledge> list = knowledgeDao.retrieveByKBId(id);
+        if (code.equals("*")) {
+            return new ReturnObject(list);
+        } else {
+            return new ReturnObject(list.stream().filter(po -> po.getCode().equals(code)).toList());
+        }
+    }
 }

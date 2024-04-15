@@ -1,5 +1,8 @@
 package com.edu.xmu.rag.controller;
 
+import com.edu.xmu.rag.controller.vo.KnowledgeBaseVo;
+import com.edu.xmu.rag.controller.vo.KnowledgeVo;
+import com.edu.xmu.rag.controller.vo.SimpleKnowledge;
 import com.edu.xmu.rag.controller.vo.SimpleKnowledgeBase;
 import com.edu.xmu.rag.core.model.ReturnObject;
 import com.edu.xmu.rag.dao.bo.KnowledgeBase;
@@ -28,7 +31,7 @@ public class KnowledgeController {
     }
 
     @PutMapping("/knowledgebase")
-    public ReturnObject updateKnowledgeBase(@Validated @RequestBody KnowledgeBase vo) {
+    public ReturnObject updateKnowledgeBase(@Validated @RequestBody KnowledgeBaseVo vo) {
         return knowledgeService.updateKnowledgeBase(vo);
     }
 
@@ -46,8 +49,37 @@ public class KnowledgeController {
         }
     }
 
-//    @GetMapping("/knowledgebase")
-//    public ReturnObject findKnowledge() {
-//
-//    }
+    @GetMapping("/knowledgebase/{uid}/{code}")
+    public ReturnObject findKnowledgeBase(@PathVariable Long uid, @PathVariable String code) {
+        return knowledgeService.findKnowledgeBase(uid, code);
+    }
+
+    @PostMapping("/knowledge")
+    public ReturnObject createKnowledge(@Validated @RequestBody SimpleKnowledge vo) {
+        return knowledgeService.createKnowledge(vo);
+    }
+
+    @PutMapping("/knowledge")
+    public ReturnObject updateKnowledge(@Validated @RequestBody KnowledgeVo vo) {
+        return knowledgeService.updateKnowledge(vo);
+    }
+
+    @DeleteMapping("/knowledge/{id}")
+    public ReturnObject delKnowledge(@PathVariable Long id) {
+        return knowledgeService.delKnowledge(id);
+    }
+
+    @PutMapping("/knowledge/{id}/{type}")
+    public ReturnObject changeKnowledgeStatus(@PathVariable Long id, @PathVariable Integer type) {
+        if (type == 0) {
+            return knowledgeService.disableKnowledge(id);
+        } else {
+            return knowledgeService.enableKnowledge(id);
+        }
+    }
+
+    @GetMapping("/knowledge/{kbid}/{code}")
+    public ReturnObject findKnowledge(@PathVariable Long kbid, @PathVariable String code) {
+        return knowledgeService.findKnowledge(kbid, code);
+    }
 }
