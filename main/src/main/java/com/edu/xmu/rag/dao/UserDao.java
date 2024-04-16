@@ -80,9 +80,9 @@ public class UserDao {
     }
 
     public List<User> findAllUsers() {
-        List<UserPo> userPos = userPoMapper.findAll(); // 调用 MyBatis Mapper 查询所有用户记录
+        List<UserPo> userPos = userPoMapper.findAll();
         return userPos.stream()
-                .map(userPo -> cloneObj(userPo, User.class)) // 将 UserPo 转换为 User 对象
+                .map(userPo -> cloneObj(userPo, User.class))
                 .collect(Collectors.toList());
     }
 }

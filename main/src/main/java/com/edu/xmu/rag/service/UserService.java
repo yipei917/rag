@@ -63,7 +63,7 @@ public class UserService {
     public ReturnObject getUserById(Long id) {
         User user = userDao.findUserById(id);
         if (user != null) {
-            return new ReturnObject(ReturnNo.OK);
+            return new ReturnObject(ReturnNo.OK, cloneObj(user, User.class));
         } else {
             return new ReturnObject(ReturnNo.RESOURCE_ID_NOT_EXIST);
         }
@@ -77,20 +77,20 @@ public class UserService {
             ret.setType(1);
             ret.setStatus(1);
             userDao.insert(ret);
-            return new ReturnObject(ReturnNo.CREATED);
+            return new ReturnObject(ReturnNo.CREATED, cloneObj(userDao.findByName(user.getName()).orElse(null), User.class));
         }
         return new ReturnObject(ReturnNo.USER_NAME_EXIST);
     }
 
     public ReturnObject updateUser(User user) {
-        User ret = userDao.findByName(user.getName()).orElse(null);
+        User ret = userDao.findUserById(user.getId());
         if(ret != null && ret.getStatus().equals(1))
         {
             ret.setName(user.getName());
             ret.setPassword(user.getPassword());
             ret.setToken(user.getToken());
             userDao.insert(ret);
-            return new ReturnObject(ReturnNo.OK);
+            return new ReturnObject(ReturnNo.OK, cloneObj(user, User.class));
         }else {
             throw new BusinessException(ReturnNo.USER_INVALID_ACCOUNT, ReturnNo.USER_INVALID_ACCOUNT.getMessage());
         }
