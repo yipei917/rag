@@ -11,11 +11,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
-import static com.edu.xmu.rag.core.util.Common.putGmtFields;
 
 @Repository
 public class UserDao {
@@ -74,5 +75,12 @@ public class UserDao {
     public ReturnObject delById(User user) {
         userPoMapper.deleteById(user.getId());
         return new ReturnObject(ReturnNo.OK);
+    }
+
+    public List<User> findAllUsers() {
+        List<UserPo> userPos = userPoMapper.findAll();
+        return userPos.stream()
+                .map(userPo -> cloneObj(userPo, User.class))
+                .collect(Collectors.toList());
     }
 }

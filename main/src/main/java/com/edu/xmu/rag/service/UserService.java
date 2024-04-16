@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
 
 @Service
@@ -52,5 +54,57 @@ public class UserService {
         } else {
             throw new BusinessException(ReturnNo.USER_INVALID_ACCOUNT, ReturnNo.USER_INVALID_ACCOUNT.getMessage());
         }
+    }
+
+    public ReturnObject getUserById(Long id) {
+        User user = userDao.findUserById(id);
+        if (user != null) {
+            return new ReturnObject(ReturnNo.OK, user);
+        } else {
+            return new ReturnObject(ReturnNo.RESOURCE_ID_NOT_EXIST);
+        }
+    }
+
+    public ReturnObject createUser(User user) {
+        try {
+            userDao.findByName(user.getName());
+        } catch (BusinessException e) {
+            User ret = cloneObj(user, User.class);
+            ret.setType(1);
+            ret.setStatus(1);
+            return new ReturnObject(ReturnNo.CREATED, userDao.insert(ret));
+        }
+        return new ReturnObject(ReturnNo.USER_NAME_EXIST);
+    }
+
+    public ReturnObject updateUser(User user) {
+        User ret = userDao.findUserById(user.getId());
+        if(ret != null && ret.getStatus().equals(1))
+        {
+            ret.setName(user.getName());
+            ret.setPassword(user.getPassword());
+            ret.setToken(user.getToken());
+            userDao.insert(ret);
+            return new ReturnObject(ReturnNo.OK, cloneObj(user, User.class));
+        }else {
+            throw new BusinessException(ReturnNo.USER_INVALID_ACCOUNT);
+        }
+
+    }
+
+    public ReturnObject deleteUserById(User user) {
+        User ret = userDao.findByName(user.getName()).orElse(null);
+        if (ret != null && ret.getStatus().equals(1)) {
+            ret.setStatus(0);
+            userDao.insert(ret);
+            return new ReturnObject(ReturnNo.OK);
+        } else {
+            throw new BusinessException(ReturnNo.USER_INVALID_ACCOUNT);
+        }
+    }
+
+    public ReturnObject getAllUsers() {
+        List<User> res = userDao.findAllUsers();
+        return new ReturnObject(res);
     }
 }
