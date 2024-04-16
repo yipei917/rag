@@ -9,9 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SimpleKnowledgeBase {
-    @NotBlank(message = "编码不能为空")
+    private Long id;
     private String code;
     private String description;
-    @NotBlank(message = "用户Id不能为空")
     private Long userId;
 }
