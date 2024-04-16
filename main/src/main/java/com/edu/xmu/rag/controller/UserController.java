@@ -8,12 +8,8 @@ import com.edu.xmu.rag.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(produces = "application/json;charset=UTF-8")
@@ -47,13 +43,13 @@ public class UserController {
         return userService.createUser(user);
     }
 
-    @PutMapping("/user/{id}")
+    @PutMapping("/user")
     public ReturnObject updateUser(@RequestBody User user) {
         return userService.updateUser(user);
     }
 
     //逻辑删除
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping("/user")
     public ReturnObject deleteUserById(@RequestBody User user) {
         return userService.deleteUserById(user);
     }

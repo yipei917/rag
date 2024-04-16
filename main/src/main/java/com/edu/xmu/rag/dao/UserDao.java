@@ -18,7 +18,6 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
-import static com.edu.xmu.rag.core.util.Common.putGmtFields;
 
 @Repository
 public class UserDao {
