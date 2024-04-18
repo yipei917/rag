@@ -29,7 +29,6 @@ public class UserDaoTest {
         User user = User.builder()
                 .name("test")
                 .password("password")
-                .status(0)
                 .type(0).build();
 
         User saved = userDao.insert(user);
@@ -41,7 +40,6 @@ public class UserDaoTest {
         User user = User.builder()
                 .name("test")
                 .password("password")
-                .status(0)
                 .type(0).build();
         user = userDao.insert(user);
 
@@ -59,7 +57,6 @@ public class UserDaoTest {
         User user = User.builder()
                 .name("test")
                 .password("password")
-                .status(0)
                 .type(0).build();
         user = userDao.insert(user);
 
@@ -73,7 +70,6 @@ public class UserDaoTest {
         User user = User.builder()
                 .name("test")
                 .password("password")
-                .status(0)
                 .type(0).build();
         user = userDao.insert(user);
         ReturnObject ret = userDao.delById(user);

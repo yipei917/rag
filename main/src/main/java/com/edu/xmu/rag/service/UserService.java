@@ -37,7 +37,6 @@ public class UserService {
         } catch (BusinessException e) {
             User ret = cloneObj(user, User.class);
             ret.setType(1);
-            ret.setStatus(1);
             userDao.insert(ret);
             return new ReturnObject(ReturnNo.CREATED);
         }
@@ -69,17 +68,14 @@ public class UserService {
         try {
             userDao.findByName(user.getName());
         } catch (BusinessException e) {
-            User ret = cloneObj(user, User.class);
-            ret.setType(1);
-            ret.setStatus(1);
-            return new ReturnObject(ReturnNo.CREATED, userDao.insert(ret));
+            return new ReturnObject(ReturnNo.CREATED, userDao.insert(user));
         }
         return new ReturnObject(ReturnNo.USER_NAME_EXIST);
     }
 
     public ReturnObject updateUser(User user) {
         User ret = userDao.findUserById(user.getId());
-        if(ret != null && ret.getStatus().equals(1))
+        if(ret != null)
         {
             ret.setName(user.getName());
             ret.setPassword(user.getPassword());
@@ -93,12 +89,11 @@ public class UserService {
     }
 
     public ReturnObject deleteUserById(User user) {
-        User ret = userDao.findByName(user.getName()).orElse(null);
-        if (ret != null && ret.getStatus().equals(1)) {
-            ret.setStatus(0);
-            userDao.insert(ret);
+        User ret = userDao.findUserById(user.getId());
+        if (ret != null) {
+            userDao.delById(user);
             return new ReturnObject(ReturnNo.OK);
-        } else {
+        } else{
             throw new BusinessException(ReturnNo.USER_INVALID_ACCOUNT);
         }
     }

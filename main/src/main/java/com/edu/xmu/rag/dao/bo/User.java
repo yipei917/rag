@@ -12,11 +12,10 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class User implements Serializable {
     @Builder
-    public User(Long id, String name, String password, Integer status, Integer type, String token) {
+    public User(Long id, String name, String password, Integer type, String token) {
         this.id = id;
         this.name = name;
         this.password = password;
-        this.status = status;
         this.type = type;
         this.token = token;
     }
@@ -32,14 +31,6 @@ public class User implements Serializable {
     @Setter
     @Getter
     private String password;
-
-    /*
-    0：禁用
-    1：启用
-     */
-    @Setter
-    @Getter
-    private Integer status;
 
     /*
     0：管理员
