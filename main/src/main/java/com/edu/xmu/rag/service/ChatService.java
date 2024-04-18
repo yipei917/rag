@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
 
@@ -41,7 +42,9 @@ public class ChatService {
      */
     public ReturnObject findMessageListByChatId(Long id) throws RuntimeException {
         List<Message> res = messageDao.retrieveByChatId(id);
-        return new ReturnObject(res.stream().sorted(Comparator.comparing(Message::getGmtCreate)).map(bo -> cloneObj(bo, MessageVo.class)).toList());
+        return new ReturnObject(res.stream().sorted(Comparator.comparing(Message::getGmtCreate)).
+                map(bo -> cloneObj(bo, MessageVo.class))
+                .collect(Collectors.toList()));
     }
 
     /**
@@ -51,6 +54,8 @@ public class ChatService {
      */
     public ReturnObject findChatListByUserId(Long id) throws RuntimeException {
         List<Chat> res = chatDao.retrieveByUserId(id);
-        return new ReturnObject(res.stream().map(bo -> cloneObj(bo, ChatVo.class)).toList());
+        return new ReturnObject(res.stream()
+                .map(bo -> cloneObj(bo, ChatVo.class))
+                .collect(Collectors.toList()));
     }
 }

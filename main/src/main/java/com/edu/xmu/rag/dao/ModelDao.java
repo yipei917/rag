@@ -11,7 +11,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
 
@@ -59,5 +61,12 @@ public class ModelDao {
     public ReturnObject delById(Model model) {
         modelPoMapper.deleteById(model.getId());
         return new ReturnObject(ReturnNo.OK);
+    }
+
+    public List<Model> findAllModels() {
+        List<ModelPo> modelPos = modelPoMapper.findAll();
+        return modelPos.stream()
+                .map(modelPo -> cloneObj(modelPo, Model.class))
+                .collect(Collectors.toList());
     }
 }
