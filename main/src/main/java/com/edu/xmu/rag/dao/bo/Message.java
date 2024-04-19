@@ -7,6 +7,8 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,6 +20,11 @@ public class Message implements Serializable {
         this.content = content;
         this.chatId = chatId;
         this.gmtCreate = gmtCreate;
+    }
+
+    public Message(String content, String role) {
+        this.setContent(content);
+        this.setRole(role);
     }
 
     @Setter
@@ -33,6 +40,20 @@ public class Message implements Serializable {
     @Getter
     private Integer role;
 
+    public void setRole(String role) {
+        this.role = ROLE_NUM.get(role);
+    }
+
+    @ToString.Exclude
+    @JsonIgnore
+    public static final Map<String, Integer> ROLE_NUM = new HashMap<>() {
+        {
+            put("system", 0);
+            put("assistant", 1);
+            put("user", 2);
+        }
+    };
+
     @Setter
     @Getter
     private String content;
@@ -44,4 +65,9 @@ public class Message implements Serializable {
     @Setter
     @Getter
     private LocalDateTime gmtCreate;
+
+    @Override
+    public String toString() {
+        return "content = " + getContent() + ", role = " +  getRole();
+    }
 }

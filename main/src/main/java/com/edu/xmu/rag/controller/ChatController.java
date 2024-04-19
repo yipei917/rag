@@ -50,4 +50,9 @@ public class ChatController {
     public ReturnObject delChat(@PathVariable Long id) {
         return chatService.delChat(id);
     }
+
+    @PostMapping("/message")
+    public ReturnObject chat(@Validated @RequestBody MessageVo vo) {
+        return chatService.chat(vo);
+    }
 }

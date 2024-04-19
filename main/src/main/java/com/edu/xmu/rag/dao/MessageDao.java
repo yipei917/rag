@@ -57,4 +57,18 @@ public class MessageDao {
             return ret.stream().map(po -> cloneObj(po, Message.class)).toList();
         }
     }
+
+    public Message insert(Message bo) {
+        MessagePo po = cloneObj(bo, MessagePo.class);
+        logger.debug("insertMesage: po = {}", po);
+        this.messagePoMapper.save(po);
+        return cloneObj(po, Message.class);
+    }
+
+    public void delList(Long chatId) {
+        List<Message> list = retrieveByChatId(chatId);
+        for (Message m : list) {
+            this.messagePoMapper.deleteById(m.getId());
+        }
+    }
 }

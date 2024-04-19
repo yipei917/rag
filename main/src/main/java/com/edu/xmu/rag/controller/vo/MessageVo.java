@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MessageVo {
-    @NotBlank(message = "角色不能为空")
     private Integer role;
     private String content;
+    private Long chatId;
 }
