@@ -19,6 +19,7 @@ import java.util.Optional;
 
 import static com.edu.xmu.rag.core.model.Constants.MAX_RETURN;
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
+import static com.edu.xmu.rag.core.util.Common.putGmtFields;
 
 @Repository
 public class MessageDao {
@@ -60,7 +61,8 @@ public class MessageDao {
 
     public Message insert(Message bo) {
         MessagePo po = cloneObj(bo, MessagePo.class);
-        logger.debug("insertMesage: po = {}", po);
+        logger.debug("insertMessage: po = {}", po);
+        putGmtFields(po, "create");
         this.messagePoMapper.save(po);
         return cloneObj(po, Message.class);
     }
