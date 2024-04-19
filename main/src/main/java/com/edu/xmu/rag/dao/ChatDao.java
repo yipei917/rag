@@ -2,6 +2,7 @@ package com.edu.xmu.rag.dao;
 
 import com.edu.xmu.rag.core.exception.BusinessException;
 import com.edu.xmu.rag.core.model.ReturnNo;
+import com.edu.xmu.rag.core.model.ReturnObject;
 import com.edu.xmu.rag.dao.bo.Chat;
 import com.edu.xmu.rag.mapper.ChatPoMapper;
 import com.edu.xmu.rag.mapper.po.ChatPo;
@@ -73,5 +74,27 @@ public class ChatDao {
         } else {
             return ret.stream().map(po -> cloneObj(po, Chat.class)).toList();
         }
+    }
+
+    public Chat insert(Chat bo) {
+        ChatPo po = cloneObj(bo, ChatPo.class);
+        logger.debug("insertChat: po = {}", po);
+        this.chatPoMapper.save(po);
+        return cloneObj(po, Chat.class);
+    }
+
+    public Chat save(Chat bo) {
+        ChatPo po = cloneObj(bo, ChatPo.class);
+        logger.debug("saveChat: po = {}", po);
+        ChatPo save = this.chatPoMapper.save(po);
+        if (save.getId() == -1) {
+            throw new BusinessException(ReturnNo.RESOURCE_ID_NOT_EXIST, String.format(ReturnNo.RESOURCE_ID_NOT_EXIST.getMessage(), "聊天", bo.getId()));
+        }
+        return cloneObj(save, Chat.class);
+    }
+
+    public ReturnObject delById(Long id) {
+        this.chatPoMapper.deleteById(id);
+        return new ReturnObject(ReturnNo.OK);
     }
 }

@@ -53,4 +53,16 @@ public class ChatService {
         List<Chat> res = chatDao.retrieveByUserId(id);
         return new ReturnObject(res.stream().map(bo -> cloneObj(bo, ChatVo.class)).toList());
     }
+
+    public ReturnObject createChat(Chat vo) {
+        return new ReturnObject(chatDao.insert(vo));
+    }
+
+    public ReturnObject updateChat(ChatVo vo) {
+        return new ReturnObject(chatDao.save(cloneObj(vo, Chat.class)));
+    }
+
+    public ReturnObject delChat(Long id) {
+        return new ReturnObject(chatDao.delById(id));
+    }
 }
