@@ -91,7 +91,7 @@ public class ChatService {
 
     public ReturnObject chat(MessageVo vo) {
         Message ask = cloneObj(vo, Message.class);
-        ask.setRole("user");
+        ask.setRoleString("user");
         logger.debug("ask = {}", ask);
         try {
             Message answer = getAnswer(ask);

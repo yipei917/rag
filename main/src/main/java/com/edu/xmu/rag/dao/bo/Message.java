@@ -24,7 +24,7 @@ public class Message implements Serializable {
 
     public Message(String content, String role) {
         this.setContent(content);
-        this.setRole(role);
+        this.setRoleString(role);
     }
 
     @Setter
@@ -40,7 +40,7 @@ public class Message implements Serializable {
     @Getter
     private Integer role;
 
-    public void setRole(String role) {
+    public void setRoleString(String role) {
         this.role = ROLE_NUM.get(role);
     }
 
