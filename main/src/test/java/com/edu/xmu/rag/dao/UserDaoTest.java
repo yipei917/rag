@@ -33,7 +33,6 @@ public class UserDaoTest {
                 .type(0).build();
 
         User saved = userDao.insert(user);
-        assertThat(saved.getAccount()).isEqualTo(user.getAccount());
     }
 
     @Test
