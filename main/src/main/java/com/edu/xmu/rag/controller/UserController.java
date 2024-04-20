@@ -48,7 +48,6 @@ public class UserController {
         return userService.updateUser(user);
     }
 
-    //逻辑删除
     @DeleteMapping("/user")
     public ReturnObject deleteUserById(@RequestBody User user) {
         return userService.deleteUserById(user);

@@ -19,8 +19,6 @@ public class UserPo {
 
     private String password;
 
-    private Integer status;
-
     private Integer type;
 
     private String token;

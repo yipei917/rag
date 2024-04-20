@@ -92,7 +92,7 @@ public class KnowledgeService {
         if (code.equals("*")) {
             return new ReturnObject(list);
         } else {
-            return new ReturnObject(list.stream().filter(po -> po.getCode().equals(code)).toList());
+            return new ReturnObject(list.stream().filter(po -> po.getCode().equals(code)).collect(Collectors.toList()));
         }
     }
 
@@ -144,11 +144,11 @@ public class KnowledgeService {
     根据知识库id和知识code查询知识
      */
     public ReturnObject findKnowledge(Long id, String code) throws RuntimeException {
-        List<KnowledgeVo> list = knowledgeDao.retrieveByKBId(id).stream().map(bo -> cloneObj(bo, KnowledgeVo.class)).toList();
+        List<KnowledgeVo> list = knowledgeDao.retrieveByKBId(id).stream().map(bo -> cloneObj(bo, KnowledgeVo.class)).collect(Collectors.toList());
         if (code.equals("*")) {
             return new ReturnObject(list.stream());
         } else {
-            return new ReturnObject(list.stream().filter(bo -> bo.getCode().equals(code)).toList());
+            return new ReturnObject(list.stream().filter(bo -> bo.getCode().equals(code)).collect(Collectors.toList()));
         }
     }
 }

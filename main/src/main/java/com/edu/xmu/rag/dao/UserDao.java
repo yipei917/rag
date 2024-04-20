@@ -3,6 +3,7 @@ package com.edu.xmu.rag.dao;
 import com.edu.xmu.rag.core.exception.BusinessException;
 import com.edu.xmu.rag.core.model.ReturnNo;
 import com.edu.xmu.rag.core.model.ReturnObject;
+import com.edu.xmu.rag.dao.bo.Message;
 import com.edu.xmu.rag.dao.bo.User;
 import com.edu.xmu.rag.mapper.UserPoMapper;
 import com.edu.xmu.rag.mapper.po.UserPo;

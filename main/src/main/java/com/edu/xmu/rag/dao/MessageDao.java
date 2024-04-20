@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static com.edu.xmu.rag.core.model.Constants.MAX_RETURN;
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
@@ -55,7 +56,9 @@ public class MessageDao {
         if (ret.isEmpty()) {
             return new ArrayList<>();
         } else {
-            return ret.stream().map(po -> cloneObj(po, Message.class)).toList();
+            return ret.stream()
+                    .map(po -> cloneObj(po, Message.class))
+                    .collect(Collectors.toList());
         }
     }
 
