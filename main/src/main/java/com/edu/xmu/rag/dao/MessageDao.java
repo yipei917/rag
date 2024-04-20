@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 
 import static com.edu.xmu.rag.core.model.Constants.MAX_RETURN;
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
+import static com.edu.xmu.rag.core.util.Common.putGmtFields;
 
 @Repository
 public class MessageDao {
@@ -58,6 +59,21 @@ public class MessageDao {
             return ret.stream()
                     .map(po -> cloneObj(po, Message.class))
                     .collect(Collectors.toList());
+        }
+    }
+
+    public Message insert(Message bo) {
+        MessagePo po = cloneObj(bo, MessagePo.class);
+        logger.debug("insertMessage: po = {}", po);
+        putGmtFields(po, "create");
+        this.messagePoMapper.save(po);
+        return cloneObj(po, Message.class);
+    }
+
+    public void delList(Long chatId) {
+        List<Message> list = retrieveByChatId(chatId);
+        for (Message m : list) {
+            this.messagePoMapper.deleteById(m.getId());
         }
     }
 }
