@@ -19,11 +19,10 @@ public class EmbeddingModel {
     /**
      * 请求获取Embeddings，请求出错返回null
      *
-     * @param apiKey openAIKey
      * @param msg    需要Embeddings的信息
      * @return 为null则请求失败，反之放回正确结果
      */
-    public EmbeddingsApiResult doEmbedding(String apiKey, String msg) {
+    public EmbeddingsApiResult doEmbedding(String msg) {
         this.embeddingsApiParam.setInput(msg);
         Gson gson = new Gson();
         String json = gson.toJson(this.embeddingsApiParam);

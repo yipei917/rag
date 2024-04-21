@@ -34,7 +34,7 @@ public class ChatGptModel {
      * @param question 问题
      * @return 答案，超时或者其他异常返回默认信息
      */
-    public String doChat(String apiKey,String question,List<String> passages){
+    public String doChat(String question,List<String> passages){
         /*
             将查找出来的文章集合处理成字符串
          */

@@ -20,3 +20,11 @@ server:
 page-size:
   max: 1000
   default: 10
+
+milvus:
+  ip: localhost
+  port: 19530
+
+gpt:
+  model:
+    key:
