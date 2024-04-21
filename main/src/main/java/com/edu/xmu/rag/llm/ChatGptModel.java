@@ -69,7 +69,7 @@ public class ChatGptModel {
                 //取出gpt回应信息
                 gptMessage = chatGptApiResult.getChoices().get(0).getMessage();
             }else {
-                return "chatGpt出错了,错误码:"+response.code();
+                return "ChatGpt出错了,错误码:"+response.code();
                 //todo 频繁问答对应策略
             }
         } catch (SocketTimeoutException e){
@@ -77,7 +77,7 @@ public class ChatGptModel {
             return "网络超时了，稍后再向我提问吧。";
         }catch (IOException e) {
             e.printStackTrace();
-            return "chatGpt出错了,try again......";
+            return "ChatGpt出错了,try again......";
         }
         return gptMessage.getContent();
     }

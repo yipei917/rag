@@ -1,5 +1,7 @@
 package com.edu.xmu.rag.service;
 
+import com.edu.xmu.rag.core.model.ReturnNo;
+import com.edu.xmu.rag.core.model.ReturnObject;
 import io.milvus.client.MilvusServiceClient;
 import io.milvus.common.clientenum.ConsistencyLevelEnum;
 import io.milvus.grpc.SearchResults;
@@ -101,7 +103,7 @@ public class ChatServiceImpl implements IChatService{
 
     private static final int MAX_LENGTH = 200;
 
-    public void save(String text){
+    public ReturnObject save(String text){
         //过滤字符
         text = text.replaceAll("\\s", " ").replaceAll("(\\r\\n|\\r|\\n|\\n\\r)"," ");
         String[] sentence = text.split("。");
@@ -163,7 +165,7 @@ public class ChatServiceImpl implements IChatService{
             logger.info("error.");
             e.printStackTrace();
         }
-
+        return new ReturnObject(ReturnNo.OK);
     }
 
 }

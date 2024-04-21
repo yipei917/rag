@@ -5,6 +5,7 @@ import com.edu.xmu.rag.controller.vo.MessageVo;
 import com.edu.xmu.rag.core.model.ReturnObject;
 import com.edu.xmu.rag.dao.bo.Chat;
 import com.edu.xmu.rag.service.ChatService;
+import com.edu.xmu.rag.service.IChatService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class ChatController {
     private static final Logger logger = LoggerFactory.getLogger(ChatController.class);
 
     private final ChatService chatService;
+
+    @Autowired
+    private IChatService chatServiceImpl;
 
     @Autowired
     public ChatController(ChatService chatService) {
@@ -54,5 +58,11 @@ public class ChatController {
     @PostMapping("/message")
     public ReturnObject chat(@Validated @RequestBody MessageVo vo) {
         return chatService.chat(vo);
+    }
+
+    //向ChatGPT提问
+    @GetMapping("/sendquestion")
+    public String chat(@RequestParam String question){
+        return chatServiceImpl.toChat(question);
     }
 }
