@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
 
@@ -106,6 +107,17 @@ public class ManagementService {
             return new ReturnObject(ReturnNo.OK, prompt);
         } else {
             return new ReturnObject(ReturnNo.RESOURCE_ID_NOT_EXIST, String.format(ReturnNo.RESOURCE_ID_NOT_EXIST.getMessage(), "提示词", id));
+        }
+    }
+
+    public String findPromptContentById(Long id) throws RuntimeException {
+        Optional<Prompt> optionalPrompt = promptDao.findPromptById(id);
+        if (optionalPrompt.isPresent()) {
+            Prompt prompt = optionalPrompt.get(); // 获取实际的 Prompt 对象
+            return prompt.getSystemPrompt(); // 返回提示词内容
+        } else {
+            // 如果未找到对应的提示词，可以抛出异常或者返回默认值
+            throw new RuntimeException("Prompt not found for ID: " + id);
         }
     }
 

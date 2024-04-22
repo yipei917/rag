@@ -34,7 +34,7 @@ public class ChatGptModel {
      * @param question 问题
      * @return 答案，超时或者其他异常返回默认信息
      */
-    public String doChat(String apiKey,String question,List<String> passages){
+    public String doChat(String question,List<String> passages, String prompt){
         /*
             将查找出来的文章集合处理成字符串
          */
@@ -48,7 +48,10 @@ public class ChatGptModel {
 
         List<Message> messageList = new ArrayList<>();
         messageList.add(this.systemMsg);
-        String msg = "Refer to the text below to answer in simplified Chinese:\"{%s}\"\n\"text:{%s}\"";
+        //规定功能的提示词
+        Message promptMsg = new Message("system", prompt);
+        messageList.add(promptMsg);
+        String msg = "\nRefer to the text below to answer in simplified Chinese:\"{%s}\"\n\"text:{%s}\"";
         String format = String.format(msg, question, builder);
         Message userMessage = new Message("user", format);
         messageList.add(userMessage);
@@ -69,7 +72,7 @@ public class ChatGptModel {
                 //取出gpt回应信息
                 gptMessage = chatGptApiResult.getChoices().get(0).getMessage();
             }else {
-                return "chatGpt出错了,错误码:"+response.code();
+                return "ChatGpt出错了,错误码:"+response.code();
                 //todo 频繁问答对应策略
             }
         } catch (SocketTimeoutException e){
@@ -77,7 +80,7 @@ public class ChatGptModel {
             return "网络超时了，稍后再向我提问吧。";
         }catch (IOException e) {
             e.printStackTrace();
-            return "chatGpt出错了,try again......";
+            return "ChatGpt出错了,try again......";
         }
         return gptMessage.getContent();
     }

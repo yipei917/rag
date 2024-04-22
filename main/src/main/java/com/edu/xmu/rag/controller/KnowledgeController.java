@@ -3,7 +3,9 @@ package com.edu.xmu.rag.controller;
 import com.edu.xmu.rag.controller.vo.KnowledgeVo;
 import com.edu.xmu.rag.controller.vo.SimpleKnowledge;
 import com.edu.xmu.rag.controller.vo.SimpleKnowledgeBase;
+import com.edu.xmu.rag.core.model.ReturnNo;
 import com.edu.xmu.rag.core.model.ReturnObject;
+import com.edu.xmu.rag.service.IChatService;
 import com.edu.xmu.rag.service.KnowledgeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +19,9 @@ public class KnowledgeController {
     private static final Logger logger = LoggerFactory.getLogger(KnowledgeController.class);
 
     private final KnowledgeService knowledgeService;
+
+    @Autowired
+    private IChatService chatServiceImpl;
 
     @Autowired
     public KnowledgeController(KnowledgeService knowledgeService) {
@@ -52,8 +57,11 @@ public class KnowledgeController {
         return knowledgeService.findKnowledgeBase(uid, code);
     }
 
+    //新建知识并写入向量数据库
     @PostMapping("/knowledge")
     public ReturnObject createKnowledge(@Validated @RequestBody SimpleKnowledge vo) {
+        String knowledge = vo.getContent();
+        chatServiceImpl.save(knowledge);
         return knowledgeService.createKnowledge(vo);
     }
 
@@ -80,4 +88,5 @@ public class KnowledgeController {
     public ReturnObject findKnowledge(@PathVariable Long kbid, @PathVariable String code) {
         return knowledgeService.findKnowledge(kbid, code);
     }
+
 }

@@ -1,5 +1,7 @@
 package com.edu.xmu.rag.service;
 
+import com.edu.xmu.rag.core.model.ReturnNo;
+import com.edu.xmu.rag.core.model.ReturnObject;
 import io.milvus.client.MilvusServiceClient;
 import io.milvus.common.clientenum.ConsistencyLevelEnum;
 import io.milvus.grpc.SearchResults;
@@ -12,6 +14,7 @@ import io.milvus.response.SearchResultsWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.edu.xmu.rag.dao.bo.ChatData;
@@ -34,9 +37,8 @@ public class ChatServiceImpl implements IChatService{
     @Autowired
     private EmbeddingModel embeddingModel;
 
-
-    public String toChat(String key,String question){
-        EmbeddingsApiResult embedding = embeddingModel.doEmbedding(key,question);
+    public String toChat(String question, String prompt){
+        EmbeddingsApiResult embedding = embeddingModel.doEmbedding(question);
         if(embedding == null) return "请求失败！";
         List<Float> vector = embedding.getData().get(0).getEmbedding();
         List<ChatData> searchResult = search(Arrays.asList(vector));
@@ -44,7 +46,7 @@ public class ChatServiceImpl implements IChatService{
         for(ChatData data:searchResult){
             contents.add(data.getContent());
         }
-        String ans = chatGptModel.doChat(key,question, contents);
+        String ans = chatGptModel.doChat(question, contents, prompt);
         return ans;
     }
 
@@ -101,7 +103,7 @@ public class ChatServiceImpl implements IChatService{
 
     private static final int MAX_LENGTH = 200;
 
-    public void save(String text){
+    public ReturnObject save(String text){
         //过滤字符
         text = text.replaceAll("\\s", " ").replaceAll("(\\r\\n|\\r|\\n|\\n\\r)"," ");
         String[] sentence = text.split("。");
@@ -125,11 +127,11 @@ public class ChatServiceImpl implements IChatService{
 
         List<Integer> contentWordCount = new ArrayList<>();
         List<List<Float>> contentVector = new ArrayList<>();
-        String key = "";
+
         for(String str : ans){
             logger.info(str);
             contentWordCount.add(str.length());
-            EmbeddingsApiResult embedding = embeddingModel.doEmbedding(key,str);
+            EmbeddingsApiResult embedding = embeddingModel.doEmbedding(str);
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
@@ -140,10 +142,10 @@ public class ChatServiceImpl implements IChatService{
             }
             contentVector.add(embedding.getData().get(0).getEmbedding());
         }
-
-        System.out.println(ans.size());
-        System.out.println(contentWordCount.size());
-        System.out.println(contentVector.size());
+//        测试size是否异常 知识不能超过3句话 ChatGPT不能连续访问超过3次
+//        System.out.println(ans.size());
+//        System.out.println(contentWordCount.size());
+//        System.out.println(contentVector.size());
 
         List<InsertParam.Field> fields = new ArrayList<>();
         fields.add(new InsertParam.Field("content", ans));
@@ -163,7 +165,7 @@ public class ChatServiceImpl implements IChatService{
             logger.info("error.");
             e.printStackTrace();
         }
-
+        return new ReturnObject(ReturnNo.OK);
     }
 
 }
