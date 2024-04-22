@@ -1,8 +1,10 @@
 package com.edu.xmu.rag.dao;
 
+import com.edu.xmu.rag.controller.vo.PromptVo;
 import com.edu.xmu.rag.core.exception.BusinessException;
 import com.edu.xmu.rag.core.model.ReturnNo;
 import com.edu.xmu.rag.core.model.ReturnObject;
+import com.edu.xmu.rag.core.util.Common;
 import com.edu.xmu.rag.dao.bo.Prompt;
 import com.edu.xmu.rag.mapper.PromptPoMapper;
 import com.edu.xmu.rag.mapper.po.PromptPo;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 import static com.edu.xmu.rag.core.model.Constants.MAX_RETURN;
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
@@ -140,6 +143,15 @@ public class PromptDao {
         } else {
             return ret.stream().map(po -> cloneObj(po, Prompt.class)).toList();
         }
+    }
+
+    public List<Prompt> findAllPrompts(Integer page, Integer pageSize) throws RuntimeException{
+        Pageable pageable = PageRequest.of(page-1,pageSize);
+        Page<PromptPo> pos = promptPoMapper.findAll(pageable);
+        return pos.stream().map((po)->{
+            Prompt bo= Common.cloneObj(po,Prompt.class);
+            return bo;
+        }).collect(Collectors.toList());
     }
 
 }

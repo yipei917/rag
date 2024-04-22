@@ -56,4 +56,10 @@ public class ManagementController {
         return managementService.findPromptById(id);
     }
 
+    @GetMapping("/prompt")
+    public ReturnObject findAllPrompt(@RequestParam(required = true, defaultValue = "1") Integer page,
+                                      @RequestParam(required = true, defaultValue = "10") Integer pageSize){
+        return new ReturnObject(managementService.findAllPrompts(page, pageSize));
+    }
+
 }

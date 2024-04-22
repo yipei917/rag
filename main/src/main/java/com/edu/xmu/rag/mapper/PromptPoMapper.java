@@ -18,4 +18,6 @@ public interface PromptPoMapper extends JpaRepository<PromptPo, Long> {
     Page<PromptPo> findPromptPoByUserId(Long userId, Pageable pageable);
 
     Page<PromptPo> findPromptPoByModelId(Long modelId, Pageable pageable);
+
+    Page<PromptPo> findPromptPoById(Long Id, Pageable pageable);
 }
