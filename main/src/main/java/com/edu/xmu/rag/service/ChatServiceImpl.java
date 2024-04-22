@@ -37,7 +37,7 @@ public class ChatServiceImpl implements IChatService{
     @Autowired
     private EmbeddingModel embeddingModel;
 
-    public String toChat(String question){
+    public String toChat(String question, String prompt){
         EmbeddingsApiResult embedding = embeddingModel.doEmbedding(question);
         if(embedding == null) return "请求失败！";
         List<Float> vector = embedding.getData().get(0).getEmbedding();
@@ -46,7 +46,7 @@ public class ChatServiceImpl implements IChatService{
         for(ChatData data:searchResult){
             contents.add(data.getContent());
         }
-        String ans = chatGptModel.doChat(question, contents);
+        String ans = chatGptModel.doChat(question, contents, prompt);
         return ans;
     }
 
@@ -142,10 +142,10 @@ public class ChatServiceImpl implements IChatService{
             }
             contentVector.add(embedding.getData().get(0).getEmbedding());
         }
-
-        System.out.println(ans.size());
-        System.out.println(contentWordCount.size());
-        System.out.println(contentVector.size());
+//        测试size是否异常 知识不能超过3句话 ChatGPT不能连续访问超过3次
+//        System.out.println(ans.size());
+//        System.out.println(contentWordCount.size());
+//        System.out.println(contentVector.size());
 
         List<InsertParam.Field> fields = new ArrayList<>();
         fields.add(new InsertParam.Field("content", ans));

@@ -6,7 +6,7 @@ import com.edu.xmu.rag.core.model.ReturnObject;
 import com.edu.xmu.rag.dao.bo.ChatData;
 
 public interface IChatService {
-    String toChat(String question);
+    String toChat(String question, String prompt);
     ReturnObject save(String text);
     List<ChatData> search(List<List<Float>> search_vectors);
 }
