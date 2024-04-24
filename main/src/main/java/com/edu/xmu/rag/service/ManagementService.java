@@ -7,6 +7,7 @@ import com.edu.xmu.rag.core.util.Common;
 import com.edu.xmu.rag.dao.ModelDao;
 import com.edu.xmu.rag.dao.PromptDao;
 import com.edu.xmu.rag.dao.bo.Prompt;
+import com.edu.xmu.rag.dao.bo.User;
 import com.edu.xmu.rag.service.dto.PageDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -127,6 +128,23 @@ public class ManagementService {
         }).collect(Collectors.toList());
         logger.debug("findAllPrompts : list = {}",list);
         return new PageDto<>(list,page,pageSize);
+    }
+
+    /**
+     *根据用户id、模型id获取用户提示词
+     */
+    public ReturnObject getUserPrompts(Long userId, Long modelId) {
+        List<Prompt> res = promptDao.retrieveByUserIdAndModelId(userId, modelId);
+        return new ReturnObject(res);
+    }
+
+    public String getSystemPrompt(Long id){
+        Prompt prompt = promptDao.findPromptById(id).get();
+        if(prompt != null){
+            return prompt.getSystemPrompt();
+        } else {
+            return null;
+        }
     }
 
 }

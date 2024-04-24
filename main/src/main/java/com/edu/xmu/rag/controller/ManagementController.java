@@ -1,8 +1,10 @@
 package com.edu.xmu.rag.controller;
 
+import com.edu.xmu.rag.controller.vo.MessageVo;
 import com.edu.xmu.rag.controller.vo.PromptVo;
 import com.edu.xmu.rag.core.model.ReturnObject;
 import com.edu.xmu.rag.service.ManagementService;
+import com.edu.xmu.rag.service.PromptChatService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,9 +59,13 @@ public class ManagementController {
     }
 
     @GetMapping("/prompt")
-    public ReturnObject findAllPrompt(@RequestParam(required = true, defaultValue = "1") Integer page,
-                                      @RequestParam(required = true, defaultValue = "10") Integer pageSize){
+    public ReturnObject findAllPrompts(@RequestParam(defaultValue = "1") Integer page,
+                                      @RequestParam(defaultValue = "10") Integer pageSize){
         return new ReturnObject(managementService.findAllPrompts(page, pageSize));
     }
 
+    @GetMapping("/userPrompt/{userId}/{modelId}")
+    public ReturnObject getUserPrompt(@PathVariable Long userId, @PathVariable Long modelId){
+        return managementService.getUserPrompts(userId, modelId);
+    }
 }
