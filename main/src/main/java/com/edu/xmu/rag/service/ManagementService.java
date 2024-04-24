@@ -3,9 +3,12 @@ package com.edu.xmu.rag.service;
 import com.edu.xmu.rag.controller.vo.PromptVo;
 import com.edu.xmu.rag.core.model.ReturnNo;
 import com.edu.xmu.rag.core.model.ReturnObject;
+import com.edu.xmu.rag.core.util.Common;
 import com.edu.xmu.rag.dao.ModelDao;
 import com.edu.xmu.rag.dao.PromptDao;
 import com.edu.xmu.rag.dao.bo.Prompt;
+import com.edu.xmu.rag.dao.bo.User;
+import com.edu.xmu.rag.service.dto.PageDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.edu.xmu.rag.core.util.Common.cloneObj;
 
@@ -100,12 +104,46 @@ public class ManagementService {
         }
     }
 
+    /**
+     * 根据id查询提示词
+     */
     public ReturnObject findPromptById(Long id) throws RuntimeException {
         Prompt prompt = promptDao.findPromptById(id).get();
         if(prompt != null){
             return new ReturnObject(ReturnNo.OK, prompt);
         } else {
             return new ReturnObject(ReturnNo.RESOURCE_ID_NOT_EXIST, String.format(ReturnNo.RESOURCE_ID_NOT_EXIST.getMessage(), "提示词", id));
+        }
+    }
+
+    /**
+     * 分页查询所有提示词
+     */
+    @Transactional
+    public PageDto<PromptVo> findAllPrompts(Integer page, Integer pageSize)throws RuntimeException {
+        List<Prompt> bos = promptDao.findAllPrompts(page, pageSize);
+        List<PromptVo> list = bos.stream().map(bo->{
+            PromptVo vo= Common.cloneObj(bo,PromptVo.class);
+            return vo;
+        }).collect(Collectors.toList());
+        logger.debug("findAllPrompts : list = {}",list);
+        return new PageDto<>(list,page,pageSize);
+    }
+
+    /**
+     *根据用户id、模型id获取用户提示词
+     */
+    public ReturnObject getUserPrompts(Long userId, Long modelId) {
+        List<Prompt> res = promptDao.retrieveByUserIdAndModelId(userId, modelId);
+        return new ReturnObject(res);
+    }
+
+    public String getSystemPrompt(Long id){
+        Prompt prompt = promptDao.findPromptById(id).get();
+        if(prompt != null){
+            return prompt.getSystemPrompt();
+        } else {
+            return null;
         }
     }
 
