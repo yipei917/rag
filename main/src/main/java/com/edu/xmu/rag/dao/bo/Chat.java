@@ -41,10 +41,10 @@ public class Chat implements Serializable {
     private User user;
 
     public User getUser() {
-        if (null == this.userId) {
+        if (null == this.userId) { // 如果外键为空，返回空
             return null;
         }
-        if (null == this.user && null != this.userDao) {
+        if (null == this.user && null != this.userDao) { // 外键不为空，根据外键获取对象
             this.user  = userDao.findUserById(this.userId);
         }
         return this.user;
