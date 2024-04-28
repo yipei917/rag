@@ -1,9 +1,6 @@
 package com.edu.xmu.rag.service;
 
-import cn.bugstack.chatglm.model.ChatCompletionRequest;
-import cn.bugstack.chatglm.model.ChatCompletionSyncResponse;
-import cn.bugstack.chatglm.model.Model;
-import cn.bugstack.chatglm.model.Role;
+import cn.bugstack.chatglm.model.*;
 import cn.bugstack.chatglm.session.Configuration;
 import cn.bugstack.chatglm.session.OpenAiSession;
 import cn.bugstack.chatglm.session.OpenAiSessionFactory;
@@ -129,5 +126,17 @@ public class ChatService {
         logger.info("测试结果：{}", JSON.toJSONString(response));
         ChatCompletionSyncResponse.Choice choice = response.getChoices().get(0);
         return new Message(choice.getMessage().getContent(), choice.getMessage().getRole());
+    }
+
+    public ReturnObject txt2pic(String content) {
+        ImageCompletionRequest request = new ImageCompletionRequest();
+        request.setModel(Model.COGVIEW_3);
+        request.setPrompt(content);
+        try {
+            ImageCompletionResponse response = openAiSession.genImages(request);
+            return new ReturnObject(response);
+        } catch (Exception e) {
+            return new ReturnObject(ReturnNo.CHAT_WRONG);
+        }
     }
 }

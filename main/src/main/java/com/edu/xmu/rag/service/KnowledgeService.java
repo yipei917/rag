@@ -9,12 +9,14 @@ import com.edu.xmu.rag.dao.KnowledgeBaseDao;
 import com.edu.xmu.rag.dao.KnowledgeDao;
 import com.edu.xmu.rag.dao.bo.Knowledge;
 import com.edu.xmu.rag.dao.bo.KnowledgeBase;
+import com.edu.xmu.rag.dao.bo.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -92,7 +94,7 @@ public class KnowledgeService {
         if (code.equals("*")) {
             return new ReturnObject(list);
         } else {
-            return new ReturnObject(list.stream().filter(po -> po.getCode().equals(code)).toList());
+            return new ReturnObject(list.stream().filter(po -> po.getCode().contains(code)).toList());
         }
     }
 
@@ -143,12 +145,14 @@ public class KnowledgeService {
     /*
     根据知识库id和知识code查询知识
      */
-    public ReturnObject findKnowledge(Long id, String code) throws RuntimeException {
+    public ReturnObject findKnowledge(Long id, String code, String keyword) throws RuntimeException {
         List<KnowledgeVo> list = knowledgeDao.retrieveByKBId(id).stream().map(bo -> cloneObj(bo, KnowledgeVo.class)).toList();
-        if (code.equals("*")) {
-            return new ReturnObject(list.stream());
-        } else {
-            return new ReturnObject(list.stream().filter(bo -> bo.getCode().equals(code)).toList());
+        if (null != code) {
+            list = list.stream().filter(bo -> bo.getCode().contains(code)).collect(Collectors.toList());
         }
+        if (null != keyword) {
+            list = list.stream().filter(bo -> bo.getContent().contains(keyword) || bo.getTitle().contains(keyword)).collect(Collectors.toList());
+        }
+        return new ReturnObject(list.stream().sorted(Comparator.comparing(KnowledgeVo::getGmtCreate)));
     }
 }

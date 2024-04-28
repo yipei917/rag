@@ -3,6 +3,7 @@ package com.edu.xmu.rag.controller;
 import com.edu.xmu.rag.controller.vo.KnowledgeVo;
 import com.edu.xmu.rag.controller.vo.SimpleKnowledge;
 import com.edu.xmu.rag.controller.vo.SimpleKnowledgeBase;
+import com.edu.xmu.rag.controller.vo.SimpleSearch;
 import com.edu.xmu.rag.core.model.ReturnObject;
 import com.edu.xmu.rag.service.KnowledgeService;
 import org.slf4j.Logger;
@@ -76,8 +77,8 @@ public class KnowledgeController {
         }
     }
 
-    @GetMapping("/knowledge/{kbid}/{code}")
-    public ReturnObject findKnowledge(@PathVariable Long kbid, @PathVariable String code) {
-        return knowledgeService.findKnowledge(kbid, code);
+    @GetMapping("/knowledge")
+    public ReturnObject findKnowledge(@Validated @RequestBody SimpleSearch search) {
+        return knowledgeService.findKnowledge(search.getId(), search.getCode(), search.getKeyword());
     }
 }
