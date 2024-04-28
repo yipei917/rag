@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -92,7 +93,7 @@ public class KnowledgeService {
         if (code.equals("*")) {
             return new ReturnObject(list);
         } else {
-            return new ReturnObject(list.stream().filter(po -> po.getCode().equals(code)).collect(Collectors.toList()));
+            return new ReturnObject(list.stream().filter(po -> po.getCode().contains(code)).collect(Collectors.toList()));
         }
     }
 
@@ -143,12 +144,14 @@ public class KnowledgeService {
     /*
     根据知识库id和知识code查询知识
      */
-    public ReturnObject findKnowledge(Long id, String code) throws RuntimeException {
-        List<KnowledgeVo> list = knowledgeDao.retrieveByKBId(id).stream().map(bo -> cloneObj(bo, KnowledgeVo.class)).collect(Collectors.toList());
-        if (code.equals("*")) {
-            return new ReturnObject(list.stream());
-        } else {
-            return new ReturnObject(list.stream().filter(bo -> bo.getCode().equals(code)).collect(Collectors.toList()));
+    public ReturnObject findKnowledge(Long id, String code, String keyword) throws RuntimeException {
+        List<KnowledgeVo> list = knowledgeDao.retrieveByKBId(id).stream().map(bo -> cloneObj(bo, KnowledgeVo.class)).toList();
+        if (null != code) {
+            list = list.stream().filter(bo -> bo.getCode().contains(code)).collect(Collectors.toList());
         }
+        if (null != keyword) {
+            list = list.stream().filter(bo -> bo.getContent().contains(keyword) || bo.getTitle().contains(keyword)).collect(Collectors.toList());
+        }
+        return new ReturnObject(list.stream().sorted(Comparator.comparing(KnowledgeVo::getGmtCreate)));
     }
 }

@@ -2,6 +2,7 @@ package com.edu.xmu.rag.controller;
 
 import com.edu.xmu.rag.controller.vo.ChatVo;
 import com.edu.xmu.rag.controller.vo.MessageVo;
+import com.edu.xmu.rag.controller.vo.SimpleText;
 import com.edu.xmu.rag.core.model.ReturnObject;
 import com.edu.xmu.rag.dao.bo.Chat;
 import com.edu.xmu.rag.service.ChatService;
@@ -70,5 +71,10 @@ public class ChatController {
         String prompt = managementService.findPromptContentById(id);
         logger.info(prompt);
         return chatServiceImpl.toChat(question, prompt);
+    }
+
+    @GetMapping("/txt2pic")
+    public ReturnObject txt2pic(@Validated @RequestBody SimpleText text) {
+        return chatService.txt2pic(text.getContent());
     }
 }

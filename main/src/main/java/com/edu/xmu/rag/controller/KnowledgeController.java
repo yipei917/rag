@@ -4,6 +4,7 @@ import com.edu.xmu.rag.controller.vo.KnowledgeVo;
 import com.edu.xmu.rag.controller.vo.SimpleKnowledge;
 import com.edu.xmu.rag.controller.vo.SimpleKnowledgeBase;
 import com.edu.xmu.rag.core.model.ReturnNo;
+import com.edu.xmu.rag.controller.vo.SimpleSearch;
 import com.edu.xmu.rag.core.model.ReturnObject;
 import com.edu.xmu.rag.service.IChatService;
 import com.edu.xmu.rag.service.KnowledgeService;
@@ -84,9 +85,8 @@ public class KnowledgeController {
         }
     }
 
-    @GetMapping("/knowledge/{kbid}/{code}")
-    public ReturnObject findKnowledge(@PathVariable Long kbid, @PathVariable String code) {
-        return knowledgeService.findKnowledge(kbid, code);
+    @GetMapping("/knowledge")
+    public ReturnObject findKnowledge(@Validated @RequestBody SimpleSearch search) {
+        return knowledgeService.findKnowledge(search.getId(), search.getCode(), search.getKeyword());
     }
-
 }

@@ -4,7 +4,6 @@ import com.edu.xmu.rag.controller.vo.MessageVo;
 import com.edu.xmu.rag.controller.vo.PromptVo;
 import com.edu.xmu.rag.core.model.ReturnObject;
 import com.edu.xmu.rag.service.ManagementService;
-import com.edu.xmu.rag.service.PromptChatService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -133,4 +133,13 @@ public class ZhipuAITest {
         log.info("message = {}", new Message(choice.getMessage().getContent(), choice.getMessage().getRole()).toString());
     }
 
+    @Test
+    public void test_genImages() throws Exception {
+        ImageCompletionRequest request = new ImageCompletionRequest();
+        request.setModel(Model.COGVIEW_3);
+        request.setPrompt("画个小狗");
+        ImageCompletionResponse response = openAiSession.genImages(request);
+        log.info("测试结果：{}", JSON.toJSONString(response));
+    }
+
 }
