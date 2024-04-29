@@ -31,8 +31,8 @@ public class KnowledgeController {
 
     @PostMapping("/knowledgebase")
     public ReturnObject createKnowledgeBase(@Validated @RequestBody SimpleKnowledgeBase vo) {
-        if (knowledgeService.isCodeExist(vo.getCode())) return new ReturnObject(ReturnNo.CODE_EXIST);
-        this.milvusService.createKnowledgeBase(vo.getCode());
+        if (knowledgeService.isCodeExist(vo.getCode(), vo.getUserId())) return new ReturnObject(ReturnNo.CODE_EXIST);
+        this.milvusService.createKnowledgeBase(vo.getCode() + vo.getUserId());
         return knowledgeService.createKnowledgeBase(vo);
     }
 

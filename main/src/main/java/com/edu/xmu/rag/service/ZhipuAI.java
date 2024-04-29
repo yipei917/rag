@@ -71,23 +71,23 @@ public class ZhipuAI {
     }
 
     private String rag(SimpleQuestion question) {
-        ChunkResult chunk = new ChunkResult();
-        chunk.setChunkId(0);
-        chunk.setContent(question.getContent());
-        chunk.setDocId("厦门");
+        //  将问题向量化
+        ChunkResult chunk = new ChunkResult("question", 0, question.getContent());
         ZhipuEmbeddingResult embeddingResult = milvusService.embedding(chunk);
-
+        //  根据用户id获取用户全部的知识库编码
         List<String> codes = knowledgeService.findKnowledgeBaseCodeByUserId(question.getUserId());
+        //  builder用于接收知识
         StringBuilder builder = new StringBuilder();
+        //  遍历每个知识库
         for (String code : codes) {
+            //  相似度比较
             List<String> searchResult = milvusService.search(Collections.singletonList(embeddingResult.getEmbedding()), code);
             for(int i = 1; i <= searchResult.size(); i++){
                 builder.append(i).append(searchResult.get(i-1)).append("\n");
             }
         }
-
+        //  构建用户提示词
         return String.format(LLMUtils.buildPrompt(), question.getContent(), builder);
-
     }
 
     private Message getAnswer(String ask, String prompt) throws Exception {

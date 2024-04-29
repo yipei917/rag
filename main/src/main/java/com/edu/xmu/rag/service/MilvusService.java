@@ -52,9 +52,9 @@ public class MilvusService {
 
 
     public void save(String content, String code) {
-
+        //  将文本分块
         List<ChunkResult> chunks = this.textChunk(content, code);
-
+        //  将分块后的文本向量化
         List<InsertParam.Field> fields = this.embedding(chunks);
 
         InsertParam insertParam = InsertParam.newBuilder()
@@ -101,9 +101,9 @@ public class MilvusService {
     }
 
     public void createKnowledgeBase(String code) {
-        createCollection(code);
-        buildIndex(code);
-        logger.info("create Mlivus collection name = {}", code);
+        createCollection(code);  // 创建集合
+        buildIndex(code);        // 创建索引
+        logger.info("create Milvus collection name = {}", code);
     }
 
     public ZhipuEmbeddingResult embedding(ChunkResult chunk) {

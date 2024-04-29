@@ -57,7 +57,7 @@ public class KnowledgeService {
     启用知识库
      */
     public ReturnObject enableKnowledgeBase(Long id) {
-        KnowledgeBase bo = knowledgeBaseDao.findUserById(id);
+        KnowledgeBase bo = knowledgeBaseDao.findKnowledgeBaseById(id);
         bo.setStatus(1);
         knowledgeBaseDao.save(bo);
         return new ReturnObject(ReturnNo.OK);
@@ -67,22 +67,28 @@ public class KnowledgeService {
     禁用知识库
      */
     public ReturnObject disableKnowledgeBase(Long id) {
-        KnowledgeBase bo = knowledgeBaseDao.findUserById(id);
+        KnowledgeBase bo = knowledgeBaseDao.findKnowledgeBaseById(id);
         bo.setStatus(0);
         knowledgeBaseDao.save(bo);
         return new ReturnObject(ReturnNo.OK);
     }
 
     public String findKnowledgeBaseCode(Long id) {
-        return knowledgeBaseDao.findUserById(id).getCode();
+        // 根据id获取对应的知识库对象，再返回code + userId
+        KnowledgeBase bo = knowledgeBaseDao.findKnowledgeBaseById(id);
+        return bo.getCode() + bo.getUserId();
     }
 
     public List<String> findKnowledgeBaseCodeByUserId(Long id) {
-        return this.knowledgeBaseDao.retrieveByUserId(id).stream().map(KnowledgeBase::getCode).collect(Collectors.toList());
+        return this.knowledgeBaseDao.retrieveByUserId(id).stream().filter(bo -> bo.getStatus() == 1).map(bo -> bo.getCode() + bo.getUserId()).collect(Collectors.toList());
     }
 
-    public boolean isCodeExist(String code) {
-        return knowledgeBaseDao.findKnowledgeByCode(code);
+    public boolean isCodeExist(String code, Long id) {
+        //根据UserId获取用户的全部知识库
+        List<KnowledgeBase> list = knowledgeBaseDao.retrieveByUserId(id);
+        for (KnowledgeBase bo : list) // 进行遍历
+            if (bo.getCode().equals(code)) return true;
+        return false;
     }
 
     /*

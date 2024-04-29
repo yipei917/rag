@@ -47,7 +47,7 @@ public class KnowledgeBaseDao {
         return ret;
     }
 
-    public KnowledgeBase findUserById(Long id) {
+    public KnowledgeBase findKnowledgeBaseById(Long id) {
         if (null == id) {
             return null;
         }
