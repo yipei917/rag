@@ -27,7 +27,7 @@ milvus:
 
 gpt:
   model:
-    key: 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
+    key:
 
 llm:
   zhipuKey: 70494edc509feaab2964130ed4aee752.dmAMYZDafwaAVzmc
