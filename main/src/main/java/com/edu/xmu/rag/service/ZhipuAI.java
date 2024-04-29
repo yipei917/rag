@@ -12,6 +12,7 @@ import com.edu.xmu.rag.core.model.ReturnNo;
 import com.edu.xmu.rag.core.model.ReturnObject;
 import com.edu.xmu.rag.dao.ChatDao;
 import com.edu.xmu.rag.dao.MessageDao;
+import com.edu.xmu.rag.dao.bo.KnowledgeBase;
 import com.edu.xmu.rag.dao.bo.Message;
 import com.edu.xmu.rag.dao.bo.Prompt;
 import com.edu.xmu.rag.llm.LLMUtils;
@@ -37,10 +38,13 @@ public class ZhipuAI {
 
     private final ManagementService managementService;
 
+    private final KnowledgeService knowledgeService;
+
     @Autowired
-    public ZhipuAI(MilvusService milvusService, ManagementService managementService) {
+    public ZhipuAI(MilvusService milvusService, ManagementService managementService, KnowledgeService knowledgeService) {
         this.milvusService = milvusService;
         this.managementService = managementService;
+        this.knowledgeService = knowledgeService;
 
         Configuration configuration = new Configuration();
         configuration.setApiHost("https://open.bigmodel.cn/");
@@ -72,12 +76,16 @@ public class ZhipuAI {
         chunk.setContent(question.getContent());
         chunk.setDocId("厦门");
         ZhipuEmbeddingResult embeddingResult = milvusService.embedding(chunk);
-        List<String> searchResult = milvusService.search(Collections.singletonList(embeddingResult.getEmbedding()));
 
+        List<String> codes = knowledgeService.findKnowledgeBaseCodeByUserId(question.getUserId());
         StringBuilder builder = new StringBuilder();
-        for(int i = 1; i <= searchResult.size(); i++){
-            builder.append(i).append(searchResult.get(i-1)).append("\n");
+        for (String code : codes) {
+            List<String> searchResult = milvusService.search(Collections.singletonList(embeddingResult.getEmbedding()), code);
+            for(int i = 1; i <= searchResult.size(); i++){
+                builder.append(i).append(searchResult.get(i-1)).append("\n");
+            }
         }
+
         return String.format(LLMUtils.buildPrompt(), question.getContent(), builder);
 
     }

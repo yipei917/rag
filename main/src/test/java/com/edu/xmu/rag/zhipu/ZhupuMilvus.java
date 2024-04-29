@@ -37,18 +37,6 @@ public class ZhupuMilvus {
         milvusService.save(content2, "厦门");
     }
 
-    @Test
-    public void search() {
-        ChunkResult chunk = new ChunkResult();
-        chunk.setChunkId(0);
-        chunk.setContent("厦门的简称是什么");
-        chunk.setDocId("厦门");
-        ZhipuEmbeddingResult embeddingResult = milvusService.embedding(chunk);
-        List<String> list = milvusService.search(Collections.singletonList(embeddingResult.getEmbedding()));
-        for (String s : list) {
-            System.out.println(s);
-        }
-    }
 
     @Test
     public void chat() {

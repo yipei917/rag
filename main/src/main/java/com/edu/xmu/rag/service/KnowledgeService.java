@@ -73,8 +73,16 @@ public class KnowledgeService {
         return new ReturnObject(ReturnNo.OK);
     }
 
-    public String findKnowledgeBaseName(Long id) {
-        return knowledgeBaseDao.findUserById(id).getTitle();
+    public String findKnowledgeBaseCode(Long id) {
+        return knowledgeBaseDao.findUserById(id).getCode();
+    }
+
+    public List<String> findKnowledgeBaseCodeByUserId(Long id) {
+        return this.knowledgeBaseDao.retrieveByUserId(id).stream().map(KnowledgeBase::getCode).collect(Collectors.toList());
+    }
+
+    public boolean isCodeExist(String code) {
+        return knowledgeBaseDao.findKnowledgeByCode(code);
     }
 
     /*

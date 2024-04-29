@@ -60,6 +60,11 @@ public class KnowledgeBaseDao {
         }
     }
 
+    public boolean findKnowledgeByCode(String code) {
+        Optional<KnowledgeBasePo> ret = knowledgeBasePoMapper.findKnowledgeBasePoByCode(code);
+        return ret.isPresent();
+    }
+
     public KnowledgeBase insert(KnowledgeBase bo) throws RuntimeException {
         KnowledgeBasePo po = cloneObj(bo, KnowledgeBasePo.class);
         putGmtFields(po, "create");

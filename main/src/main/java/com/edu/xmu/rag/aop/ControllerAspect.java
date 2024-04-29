@@ -74,7 +74,7 @@ public class ControllerAspect {
                     response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             // 401
             case AUTH_INVALID_JWT, AUTH_JWT_EXPIRED, AUTH_NEED_LOGIN, AUTH_INVALID_ACCOUNT, AUTH_ID_NOT_EXIST, AUTH_USER_FORBIDDEN,
-                    USER_INVALID_ACCOUNT, USER_NAME_EXIST ,CHAT_WRONG->
+                    USER_INVALID_ACCOUNT, USER_NAME_EXIST ,CHAT_WRONG, CODE_EXIST->
                     response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             // 500：数据库或其他严重错误
             case INTERNAL_SERVER_ERR ->

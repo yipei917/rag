@@ -31,7 +31,8 @@ public class KnowledgeController {
 
     @PostMapping("/knowledgebase")
     public ReturnObject createKnowledgeBase(@Validated @RequestBody SimpleKnowledgeBase vo) {
-        this.milvusService.createKnowledgeBase(vo.getTitle());
+        if (knowledgeService.isCodeExist(vo.getCode())) return new ReturnObject(ReturnNo.CODE_EXIST);
+        this.milvusService.createKnowledgeBase(vo.getCode());
         return knowledgeService.createKnowledgeBase(vo);
     }
 
@@ -42,7 +43,7 @@ public class KnowledgeController {
 
     @DeleteMapping("/knowledgebase/{id}")
     public ReturnObject delKnowledgeBase(@PathVariable Long id) {
-        this.milvusService.dropCollection(knowledgeService.findKnowledgeBaseName(id));
+        this.milvusService.dropCollection(knowledgeService.findKnowledgeBaseCode(id));
         return knowledgeService.delKnowledgeBase(id);
     }
 
@@ -63,7 +64,7 @@ public class KnowledgeController {
     //新建知识并写入向量数据库
     @PostMapping("/knowledge")
     public ReturnObject createKnowledge(@Validated @RequestBody SimpleKnowledge vo) {
-        milvusService.save(vo.getContent(), knowledgeService.findKnowledgeBaseName(vo.getKbId()));
+        milvusService.save(vo.getContent(), knowledgeService.findKnowledgeBaseCode(vo.getKbId()));
         return knowledgeService.createKnowledge(vo);
     }
 

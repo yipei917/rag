@@ -51,14 +51,14 @@ public class MilvusService {
     private static final int MAX_LENGTH = 200;
 
 
-    public void save(String content, String title) {
+    public void save(String content, String code) {
 
-        List<ChunkResult> chunks = this.textChunk(content, title);
+        List<ChunkResult> chunks = this.textChunk(content, code);
 
         List<InsertParam.Field> fields = this.embedding(chunks);
 
         InsertParam insertParam = InsertParam.newBuilder()
-                .withCollectionName(title)
+                .withCollectionName(code)
                 .withFields(fields)
                 .build();
         logger.info("inserting...");
@@ -100,10 +100,10 @@ public class MilvusService {
         return fields;
     }
 
-    public void createKnowledgeBase(String title) {
-        createCollection(title);
-        buildIndex(title);
-        logger.info("create Mlivus collection name = {}", title);
+    public void createKnowledgeBase(String code) {
+        createCollection(code);
+        buildIndex(code);
+        logger.info("create Mlivus collection name = {}", code);
     }
 
     public ZhipuEmbeddingResult embedding(ChunkResult chunk) {
@@ -136,10 +136,10 @@ public class MilvusService {
 
     }
 
-    public List<String> search(List<List<Float>> search_vectors) {
+    public List<String> search(List<List<Float>> search_vectors, String code) {
         milvusClient.loadCollection(
                 LoadCollectionParam.newBuilder()
-                        .withCollectionName("chat_data")
+                        .withCollectionName(code)
                         .build()
         );
 
@@ -149,7 +149,7 @@ public class MilvusService {
         List<String> contents = Arrays.asList("content");
         List<String> contentWordCounts = Arrays.asList("content_word_count");
         SearchParam searchParam = SearchParam.newBuilder()
-                .withCollectionName("chat_data")
+                .withCollectionName(code)
                 .withConsistencyLevel(ConsistencyLevelEnum.STRONG)
                 .withOutFields(ids)
                 .withOutFields(contents)
@@ -180,16 +180,16 @@ public class MilvusService {
         }
         milvusClient.releaseCollection(
                 ReleaseCollectionParam.newBuilder()
-                        .withCollectionName("chat_data")
+                        .withCollectionName(code)
                         .build());
         return res;
     }
 
-    private void buildIndex(String title){
+    private void buildIndex(String code){
         final String INDEX_PARAM = "{\"nlist\":1024}";
         milvusClient.createIndex(
                 CreateIndexParam.newBuilder()
-                        .withCollectionName(title)
+                        .withCollectionName(code)
                         .withFieldName("content_vector")
                         .withIndexType(IndexType.IVF_FLAT)
                         .withMetricType(MetricType.L2)
@@ -198,14 +198,14 @@ public class MilvusService {
                         .build()
         );
     }
-    public void dropCollection(String title){
+    public void dropCollection(String code){
         milvusClient.dropCollection(
                 DropCollectionParam.newBuilder()
-                        .withCollectionName(title)
+                        .withCollectionName(code)
                         .build()
         );
     }
-    private void createCollection(String title){
+    private void createCollection(String code){
         FieldType fieldType1 = FieldType.newBuilder()
                 .withName("id")
                 .withDataType(DataType.Int64)
@@ -227,7 +227,7 @@ public class MilvusService {
                 .withDimension(1024)
                 .build();
         CreateCollectionParam createCollectionReq = CreateCollectionParam.newBuilder()
-                .withCollectionName(title)
+                .withCollectionName(code)
                 .withShardsNum(4)
                 .addFieldType(fieldType1)
                 .addFieldType(fieldType2)
@@ -237,7 +237,7 @@ public class MilvusService {
         milvusClient.createCollection(createCollectionReq);
     }
 
-    private List<ChunkResult> textChunk(String content, String title) {
+    private List<ChunkResult> textChunk(String content, String code) {
         String text = content.replaceAll("\\s", " ").replaceAll("(\\r\\n|\\r|\\n|\\n\\r)"," ");
         String[] sentence = text.split("。");
         List<String> lines = new ArrayList<>();
@@ -261,7 +261,7 @@ public class MilvusService {
         AtomicInteger atomicInteger = new AtomicInteger(0);
         for (String line:lines) {
             ChunkResult chunkResult = new ChunkResult();
-            chunkResult.setDocId(title);
+            chunkResult.setDocId(code);
             chunkResult.setContent(line);
             chunkResult.setChunkId(atomicInteger.incrementAndGet());
             chunks.add(chunkResult);
