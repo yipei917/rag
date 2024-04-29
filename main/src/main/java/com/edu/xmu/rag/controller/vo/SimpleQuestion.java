@@ -7,6 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SimpleText {
+public class SimpleQuestion {
     private String content;
+    private String model;
+    private Long promptId;
+    private Long userId;
+    private Long chatId;
+    private Integer rag;
 }

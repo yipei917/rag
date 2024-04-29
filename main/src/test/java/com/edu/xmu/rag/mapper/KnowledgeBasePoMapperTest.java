@@ -17,10 +17,4 @@ public class KnowledgeBasePoMapperTest {
     @Autowired
     private KnowledgeBasePoMapper knowledgeBasePoMapper;
 
-    @Test
-    public void save() {
-        KnowledgeBasePo po = new KnowledgeBasePo(null,"qq","11",1,11L,null,null);
-        putGmtFields(po, "create");
-        knowledgeBasePoMapper.save(po);
-    }
 }

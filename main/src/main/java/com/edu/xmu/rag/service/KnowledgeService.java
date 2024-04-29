@@ -73,6 +73,10 @@ public class KnowledgeService {
         return new ReturnObject(ReturnNo.OK);
     }
 
+    public String findKnowledgeBaseName(Long id) {
+        return knowledgeBaseDao.findUserById(id).getTitle();
+    }
+
     /*
     删除知识库
      */

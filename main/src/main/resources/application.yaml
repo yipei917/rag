@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/rag?serverTimezone=Asia/Shanghai
     username: root
-    password: root
+    password: 506017
   jpa:
     hibernate:
       ddl-auto: validate
@@ -27,4 +27,7 @@ milvus:
 
 gpt:
   model:
-    key:
+    key: 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
+
+llm:
+  zhipuKey: 70494edc509feaab2964130ed4aee752.dmAMYZDafwaAVzmc

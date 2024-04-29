@@ -8,6 +8,7 @@ import cn.bugstack.chatglm.session.defaults.DefaultOpenAiSessionFactory;
 import com.alibaba.fastjson.JSON;
 import com.edu.xmu.rag.controller.vo.ChatVo;
 import com.edu.xmu.rag.controller.vo.MessageVo;
+import com.edu.xmu.rag.controller.vo.SimpleQuestion;
 import com.edu.xmu.rag.core.exception.BusinessException;
 import com.edu.xmu.rag.core.model.ReturnNo;
 import com.edu.xmu.rag.core.model.ReturnObject;
@@ -39,19 +40,13 @@ public class ChatService {
 
     private final MessageDao messageDao;
 
-    private final OpenAiSession openAiSession;
+    private final ZhipuAI zhipuAI;
 
     @Autowired
-    public ChatService(ChatDao chatDao, MessageDao messageDao) {
+    public ChatService(ChatDao chatDao, MessageDao messageDao, ZhipuAI zhipuAI) {
         this.chatDao = chatDao;
         this.messageDao = messageDao;
-
-        Configuration configuration = new Configuration();
-        configuration.setApiHost("https://open.bigmodel.cn/");
-        configuration.setApiSecretKey("70494edc509feaab2964130ed4aee752.dmAMYZDafwaAVzmc");
-        configuration.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OpenAiSessionFactory factory = new DefaultOpenAiSessionFactory(configuration);
-        this.openAiSession = factory.openSession();
+        this.zhipuAI = zhipuAI;
     }
 
     /**
@@ -91,12 +86,13 @@ public class ChatService {
         return new ReturnObject(chatDao.delById(id));
     }
 
-    public ReturnObject chat(MessageVo vo) {
-        Message ask = cloneObj(vo, Message.class);
+    public ReturnObject chat(SimpleQuestion question) {
+        Message ask = Message.builder().chatId(question.getChatId()).content(question.getContent()).build();
         ask.setRoleString("user");
         logger.debug("ask = {}", ask);
+
         try {
-            Message answer = getAnswer(ask);
+            Message answer = zhipuAI.chat(question);
             answer.setChatId(ask.getChatId());
             messageDao.insert(ask);
             return new ReturnObject(messageDao.insert(answer));
@@ -105,43 +101,7 @@ public class ChatService {
         }
     }
 
-    public Message getAnswer(Message ask) throws Exception {
-        ChatCompletionRequest request = new ChatCompletionRequest();
-        logger.info("问：{}", ask.getContent());
-        request.setModel(Model.GLM_3_5_TURBO); // chatGLM_6b_SSE、chatglm_lite、chatglm_lite_32k、chatglm_std、chatglm_pro
-//        request.setTools(new ArrayList<ChatCompletionRequest.Tool>() {
-//            private static final long serialVersionUID = -7988151926241837899L;
-//            {
-//                add(ChatCompletionRequest.Tool.builder()
-//                        .type(ChatCompletionRequest.Tool.Type.web_search)
-//                        .webSearch(ChatCompletionRequest.Tool.WebSearch.builder().enable(true).searchQuery("c++").build())
-//                        .build());
-//            }
-//        });
-        request.setPrompt(new ArrayList<ChatCompletionRequest.Prompt>() {
-            private static final long serialVersionUID = -7988151926241837899L;
-            {
-                add(ChatCompletionRequest.Prompt.builder()
-                        .role(Role.user.getCode())
-                        .content(ask.getContent())
-                        .build());
-            }
-        });
-        ChatCompletionSyncResponse response = openAiSession.completionsSync(request);
-        logger.info("测试结果：{}", JSON.toJSONString(response));
-        ChatCompletionSyncResponse.Choice choice = response.getChoices().get(0);
-        return new Message(choice.getMessage().getContent(), choice.getMessage().getRole());
-    }
-
     public ReturnObject txt2pic(String content) {
-        ImageCompletionRequest request = new ImageCompletionRequest();
-        request.setModel(Model.COGVIEW_3);
-        request.setPrompt(content);
-        try {
-            ImageCompletionResponse response = openAiSession.genImages(request);
-            return new ReturnObject(response);
-        } catch (Exception e) {
-            return new ReturnObject(ReturnNo.CHAT_WRONG);
-        }
+        return new ReturnObject(zhipuAI.txt2pic(content));
     }
 }

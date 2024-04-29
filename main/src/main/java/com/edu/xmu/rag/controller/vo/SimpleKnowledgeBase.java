@@ -12,5 +12,6 @@ public class SimpleKnowledgeBase {
     private Long id;
     private String code;
     private String description;
+    private String title;
     private Long userId;
 }

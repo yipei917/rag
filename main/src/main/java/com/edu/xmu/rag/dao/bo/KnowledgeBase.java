@@ -15,8 +15,9 @@ import java.util.List;
 @AllArgsConstructor
 public class KnowledgeBase implements Serializable {
     @Builder
-    public KnowledgeBase(Long id, String code, String description, Integer status, Long userId, LocalDateTime gmtCreate, LocalDateTime gmtModified, KnowledgeDao knowledgeDao) {
+    public KnowledgeBase(Long id,String title, String code, String description, Integer status, Long userId, LocalDateTime gmtCreate, LocalDateTime gmtModified, KnowledgeDao knowledgeDao) {
         this.id = id;
+        this.title = title;
         this.code = code;
         this.description = description;
         this.status = status;
@@ -29,6 +30,10 @@ public class KnowledgeBase implements Serializable {
     @Setter
     @Getter
     private Long id;
+
+    @Setter
+    @Getter
+    private String title;
 
     @Setter
     @Getter
