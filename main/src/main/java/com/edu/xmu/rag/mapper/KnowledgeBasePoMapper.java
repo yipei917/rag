@@ -11,5 +11,4 @@ import java.util.Optional;
 @Repository
 public interface KnowledgeBasePoMapper extends JpaRepository<KnowledgeBasePo, Long>{
     Page<KnowledgeBasePo> findKnowledgeBasePoByUserId(Long userId, Pageable pageable);
-    Optional<KnowledgeBasePo> findKnowledgeBasePoByCode(String code);
 }

@@ -57,6 +57,7 @@ public class ChatDao {
 
         Optional<ChatPo> po = chatPoMapper.findById(id);
         if (po.isPresent()) {
+            logger.debug("findChatById: id = {}, po = {}", id, po.get());
             return this.getBo(po.get());
         } else {
             throw new BusinessException(ReturnNo.RESOURCE_ID_NOT_EXIST, String.format(ReturnNo.RESOURCE_ID_NOT_EXIST.getMessage(), "会话", id));
@@ -74,7 +75,7 @@ public class ChatDao {
             return new ArrayList<>();
         } else {
             return ret.stream()
-                    .map(po -> cloneObj(po, Chat.class))
+                    .map(this::getBo)
                     .collect(Collectors.toList());
         }
     }

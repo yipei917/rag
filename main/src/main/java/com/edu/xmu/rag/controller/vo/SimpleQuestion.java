@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SimpleQuestion {
-    private String content;
-    private String model;
-    private Long promptId;
-    private Long userId;
-    private Long chatId;
-    private Integer rag;
+    private String content;  //  用户输入内容
+    private String model;    //  模型名称
+    private Long promptId;   //  提示词id
+    private Long userId;     //  用户id
+    private Long chatId;     //  对话id
+    private Integer rag;     //  rag为0时禁用
 }

@@ -34,7 +34,7 @@ public class KnowledgeDao {
         this.knowledgePoMapper = knowledgePoMapper;
     }
 
-    public Knowledge findUserById(Long id) {
+    public Knowledge findKnowledgeById(Long id) {
         if (null == id) {
             return null;
         }

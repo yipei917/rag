@@ -12,15 +12,9 @@ import java.util.Map;
 
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@AllArgsConstructor
+@Builder
 public class Message implements Serializable {
-    @Builder
-    public Message(Long id, Integer role, String content, Long chatId, LocalDateTime gmtCreate) {
-        this.id = id;
-        this.role = role;
-        this.content = content;
-        this.chatId = chatId;
-        this.gmtCreate = gmtCreate;
-    }
 
     public Message(String content, String role) {
         this.setContent(content);

@@ -136,7 +136,7 @@ public class KnowledgeService {
     启用知识
      */
     public ReturnObject enableKnowledge(Long id) {
-        Knowledge bo = knowledgeDao.findUserById(id);
+        Knowledge bo = knowledgeDao.findKnowledgeById(id);
         bo.setStatus(1);
         knowledgeDao.save(bo);
         return new ReturnObject(ReturnNo.OK);
@@ -146,7 +146,7 @@ public class KnowledgeService {
     禁用知识
      */
     public ReturnObject disableKnowledge(Long id) {
-        Knowledge bo = knowledgeDao.findUserById(id);
+        Knowledge bo = knowledgeDao.findKnowledgeById(id);
         bo.setStatus(0);
         knowledgeDao.save(bo);
         return new ReturnObject(ReturnNo.OK);
