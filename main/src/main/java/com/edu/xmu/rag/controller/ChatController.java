@@ -8,6 +8,7 @@ import com.edu.xmu.rag.dao.bo.Chat;
 import com.edu.xmu.rag.service.ChatService;
 import com.edu.xmu.rag.service.IChatService;
 import com.edu.xmu.rag.service.ManagementService;
+import com.edu.xmu.rag.service.PictureService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class ChatController {
 
     private final ChatService chatService;
 
+    private final PictureService pictureService;
     @Autowired
     private ManagementService managementService;
 
@@ -28,8 +30,9 @@ public class ChatController {
     private IChatService chatServiceImpl;
 
     @Autowired
-    public ChatController(ChatService chatService) {
+    public ChatController(ChatService chatService, PictureService pictureService) {
         this.chatService = chatService;
+        this.pictureService = pictureService;
     }
 
     @GetMapping("/message/{id}")
@@ -72,6 +75,6 @@ public class ChatController {
 
     @GetMapping("/txt2pic")
     public ReturnObject txt2pic(@Validated @RequestBody SimpleQuestion text) {
-        return chatService.txt2pic(text.getContent());
+        return pictureService.txt2pic(text.getContent());
     }
 }

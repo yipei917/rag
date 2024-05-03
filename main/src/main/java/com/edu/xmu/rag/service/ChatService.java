@@ -1,30 +1,20 @@
 package com.edu.xmu.rag.service;
 
-import cn.bugstack.chatglm.model.*;
-import cn.bugstack.chatglm.session.Configuration;
-import cn.bugstack.chatglm.session.OpenAiSession;
-import cn.bugstack.chatglm.session.OpenAiSessionFactory;
-import cn.bugstack.chatglm.session.defaults.DefaultOpenAiSessionFactory;
-import com.alibaba.fastjson.JSON;
 import com.edu.xmu.rag.controller.vo.ChatVo;
 import com.edu.xmu.rag.controller.vo.MessageVo;
 import com.edu.xmu.rag.controller.vo.SimpleQuestion;
-import com.edu.xmu.rag.core.exception.BusinessException;
 import com.edu.xmu.rag.core.model.ReturnNo;
 import com.edu.xmu.rag.core.model.ReturnObject;
 import com.edu.xmu.rag.dao.ChatDao;
 import com.edu.xmu.rag.dao.MessageDao;
 import com.edu.xmu.rag.dao.bo.Chat;
 import com.edu.xmu.rag.dao.bo.Message;
-import okhttp3.logging.HttpLoggingInterceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -99,9 +89,5 @@ public class ChatService {
         } catch (Exception e) {
             return new ReturnObject(ReturnNo.CHAT_WRONG);
         }
-    }
-
-    public ReturnObject txt2pic(String content) {
-        return new ReturnObject(zhipuAI.txt2pic(content));
     }
 }

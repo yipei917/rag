@@ -5,16 +5,11 @@ import cn.bugstack.chatglm.session.Configuration;
 import cn.bugstack.chatglm.session.OpenAiSession;
 import cn.bugstack.chatglm.session.OpenAiSessionFactory;
 import cn.bugstack.chatglm.session.defaults.DefaultOpenAiSessionFactory;
-import com.alibaba.fastjson.JSON;
 import com.edu.xmu.rag.controller.vo.SimpleQuestion;
 import com.edu.xmu.rag.core.exception.BusinessException;
 import com.edu.xmu.rag.core.model.ReturnNo;
 import com.edu.xmu.rag.core.model.ReturnObject;
-import com.edu.xmu.rag.dao.ChatDao;
-import com.edu.xmu.rag.dao.MessageDao;
-import com.edu.xmu.rag.dao.bo.KnowledgeBase;
 import com.edu.xmu.rag.dao.bo.Message;
-import com.edu.xmu.rag.dao.bo.Prompt;
 import com.edu.xmu.rag.llm.LLMUtils;
 import com.edu.xmu.rag.llm.result.ZhipuEmbeddingResult;
 import com.edu.xmu.rag.service.dto.ChunkResult;
@@ -55,19 +50,10 @@ public class ZhipuAI {
     }
 
     public Message chat(SimpleQuestion question) throws Exception {
-        String sysPrompt = managementService.getSystemPrompt(question.getPromptId());
-        if (null == sysPrompt) sysPrompt = "请根据要求回答";
-        if (0 == question.getRag()) {
-            return this.getAnswer(question.getContent(), sysPrompt);
-        }
-        String userPrompt = this.rag(question);
-        Message answer;
-        try {
-            answer = this.getAnswer(userPrompt, sysPrompt);
-        } catch (Exception e) {
-            throw new BusinessException(ReturnNo.CHAT_WRONG);
-        }
-        return answer;
+        String _sysPrompt = managementService.getSystemPrompt(question.getPromptId());
+        String sysPrompt = (null == _sysPrompt) ? "请根据要求回答" : _sysPrompt;
+        String userPrompt = (0 == question.getRag()) ? question.getContent() : this.rag(question);
+        return this.getAnswer(userPrompt, sysPrompt);
     }
 
     private String rag(SimpleQuestion question) {
@@ -119,17 +105,5 @@ public class ZhipuAI {
         ChatCompletionSyncResponse response = openAiSession.completionsSync(request);
         ChatCompletionSyncResponse.Choice choice = response.getChoices().get(0);
         return new Message(choice.getMessage().getContent(), choice.getMessage().getRole());
-    }
-
-    public ReturnObject txt2pic(String content) {
-        ImageCompletionRequest request = new ImageCompletionRequest();
-        request.setModel(Model.COGVIEW_3);
-        request.setPrompt(content);
-        try {
-            ImageCompletionResponse response = openAiSession.genImages(request);
-            return new ReturnObject(response);
-        } catch (Exception e) {
-            return new ReturnObject(ReturnNo.CHAT_WRONG);
-        }
     }
 }
