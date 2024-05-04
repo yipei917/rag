@@ -64,7 +64,7 @@ public class ChatService {
     }
 
     public ReturnObject createChat(Chat vo) {
-        return new ReturnObject(chatDao.insert(vo));
+        return new ReturnObject(ReturnNo.CREATED, chatDao.insert(vo));
     }
 
     public ReturnObject updateChat(ChatVo vo) {

@@ -76,4 +76,15 @@ public class ChatServiceTest {
 
         assertThat(chatService.chat(question).getCode()).isEqualTo(ReturnNo.CHAT_WRONG);
     }
+
+    @Test
+    public void chatTest3() {
+        SimpleQuestion question = new SimpleQuestion();
+        question.setRag(1);
+        question.setContent("厦门的简称是什么");
+        question.setUserId(1L);
+        question.setChatId(1L);
+
+        assertThat(chatService.chat(question).getCode()).isEqualTo(ReturnNo.OK);
+    }
 }
