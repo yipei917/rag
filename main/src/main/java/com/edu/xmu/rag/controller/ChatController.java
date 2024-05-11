@@ -77,8 +77,13 @@ public class ChatController {
         return chatServiceImpl.toChat(question, prompt);
     }
 
+    @PostMapping("/txt2pic")
+    public ReturnObject txt2pic(@Validated @RequestBody SimpleQuestion question) {
+        return pictureService.txt2pic(question.getContent(), question.getUserId());
+    }
+
     @GetMapping("/txt2pic")
-    public ReturnObject txt2pic(@Validated @RequestBody SimpleQuestion text) {
-        return pictureService.txt2pic(text.getContent());
+    public ReturnObject getPic(@Validated @RequestBody SimpleQuestion question) {
+        return pictureService.getPic(question.getUserId());
     }
 }
