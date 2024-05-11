@@ -11,6 +11,7 @@ public class KnowledgeVo {
     private Long id;
     private String code;
     private String title;
+    private Long kbId;
     private String content;
     private Integer status;
     private LocalDateTime gmtCreate;
