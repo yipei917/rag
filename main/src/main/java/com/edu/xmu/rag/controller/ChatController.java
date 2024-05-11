@@ -50,6 +50,10 @@ public class ChatController {
         return chatService.createChat(vo);
     }
 
+    @GetMapping("/chat/{id}")
+    public ReturnObject findChatById(@PathVariable Long id) {
+        return chatService.findChatById(id);
+    }
     @PutMapping("/chat")
     public ReturnObject updateChat(@Validated @RequestBody ChatVo vo) {
         return chatService.updateChat(vo);

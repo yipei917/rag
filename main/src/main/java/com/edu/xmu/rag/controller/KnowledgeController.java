@@ -91,4 +91,9 @@ public class KnowledgeController {
     public ReturnObject findKnowledge(@Validated @RequestBody SimpleSearch search) {
         return knowledgeService.findKnowledge(search.getId(), search.getCode(), search.getKeyword());
     }
+
+    @GetMapping("/knowledge/{id}/{code}/{keyword}")
+    public ReturnObject findKnowledge1(@PathVariable Long id, @PathVariable String code, @PathVariable String keyword) {
+        return knowledgeService.findKnowledge(id, code.equals("*") ? null : code, keyword.equals("*") ? null : keyword);
+    }
 }

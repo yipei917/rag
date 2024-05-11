@@ -63,6 +63,10 @@ public class ChatService {
                 .collect(Collectors.toList()));
     }
 
+    public ReturnObject findChatById(Long id) {
+        return new ReturnObject(chatDao.findChatById(id));
+    }
+
     public ReturnObject createChat(Chat vo) {
         return new ReturnObject(ReturnNo.CREATED, chatDao.insert(vo));
     }
