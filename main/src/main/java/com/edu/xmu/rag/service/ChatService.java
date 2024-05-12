@@ -59,6 +59,7 @@ public class ChatService {
     public ReturnObject findChatListByUserId(Long id) throws RuntimeException {
         List<Chat> res = chatDao.retrieveByUserId(id);
         return new ReturnObject(res.stream()
+                .filter(bo -> bo.getId() <= 10000)
                 .map(bo -> cloneObj(bo, ChatVo.class))
                 .collect(Collectors.toList()));
     }
