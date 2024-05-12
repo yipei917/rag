@@ -82,8 +82,8 @@ public class ChatController {
         return pictureService.txt2pic(question.getContent(), question.getUserId());
     }
 
-    @GetMapping("/txt2pic")
-    public ReturnObject getPic(@Validated @RequestBody SimpleQuestion question) {
-        return pictureService.getPic(question.getUserId());
+    @GetMapping("/txt2pic/{id}")
+    public ReturnObject getPic(@PathVariable Long id) {
+        return pictureService.getPic(id);
     }
 }
